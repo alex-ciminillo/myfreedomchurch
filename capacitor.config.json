@@ -1,0 +1,6 @@
+{
+  "appId": "com.bitbuddies.app",
+  "appName": "Bit Buddies",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

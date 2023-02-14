@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'TitleScreen';
+  src: url('./../fonts/titleScreen/TitleScreen.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PixelFont';
+  src: url('./../fonts/pixel/pixelFont.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./../fonts/ubuntu/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('./../fonts/pixel/PressStart2P.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.footer {
+  width: 100%;
+  margin-top: calc(1vw + 1vh + 88.5vmin); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.git img {
+  width: 25px;
+  filter: invert(80%);
+}
+
+
+.git img:hover {
+  filter: invert(100%);
+}
+
+.git {
+  margin: 0 0 0 10px;
+}
+
+.span1 {
+  font-family: 'PressStart2P';
+  color: rgb(189, 189, 189);
+  font-size: 16px;
+}
+
+canvas {
+  background-color: rgb(32,29,30);
+}
+
+.outerDiv {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: rgb(27, 27, 27);
+  cursor: url('./../images/newCursor.png'), auto;
+}
+
+.title_text {
+  font-family: 'TitleScreen';
+}
+
+
+.left_adventure {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: FlipH;
+}
+
+
+
+
+
+
+
+
+
+
