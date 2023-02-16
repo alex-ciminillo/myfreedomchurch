@@ -1,6 +1,7 @@
 import Title from './title.js'
 import BlackScreen from './blackScreen.js'
 import Home from './home.js'
+import Outside from './outside.js'
 import Component from "./component"
 import EventListener from './eventListener.js'
 import Tower from './tower.js'
@@ -16,12 +17,14 @@ export default class BitBuddies {
         this.ctx = canvas.getContext("2d");
         this.ctx.imageSmoothingEnabled = false;
         const dpi = window.devicePixelRatio; // should probably use this later (maybe?)
+        this.dpi = dpi;
         this.ctx.scale(dpi, dpi);
         // this.tower = new Tower(this.ctx, 0, 0, this.canvas)
         this.dimensions = { width: canvas.width, height: canvas.height };
         // this.title = new Title(this.canvas, this.ctx, this.dimensions);
         this.blackScreen = new BlackScreen(this.canvas, this.ctx, this.dimensions);
         this.home = new Home(this.canvas, this.ctx, this.dimensions);
+        this.outside = new Outside(this.canvas, this.ctx, this.dimensions);
         this.eventListener = new EventListener(this.canvas, this.ctx, this.dimensions);
         this.editButton = new Component(20.67, 6.21, "invisible", 278.51, 143.57, this.ctx, "other");
         this.gy = 0;
@@ -122,6 +125,8 @@ export default class BitBuddies {
             else if (this.currentScreen === "Training") { this.trainingClick(e) }
             else if (this.currentScreen === "Tower") { this.towerClick(e) }
         }
+
+        // console.log(this.gx, this.gy)
     }
 
     towerClick(e) {
@@ -290,19 +295,29 @@ export default class BitBuddies {
         this.alphaClone = start;
     }
 
+    checkForSwitchingScreen() {
+        if (this.checkIfLeavingHome()) { this.currentScreen = "outside" }
+    }
 
-    drawAnimation() {
-
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-        if (this.fadeScreen) { this.fadeOut() }
-
-
+    animateCurrentScreen() {
         if (this.currentScreen === "Title") { this.title.animate(); }
         else if (this.currentScreen === "Black Screen") { this.blackScreen.animate(); }
         else if (this.currentScreen === "Home") { this.home.animate(this.e); }
         else if (this.currentScreen === "Training") { this.training.animate(this.gx, this.gy); }
         else if (this.currentScreen === "Tower") { this.tower.animate(this.gx, this.gy); }
+    }
+
+
+    drawAnimation() {
+
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        this.checkForSwitchingScreen()
+
+        if (this.fadeScreen) { this.fadeOut() }
+
+        this.animateCurrentScreen()
+        
         if (this.screenFade === true) {
             this.fadeScreenToBlack();
         }
@@ -336,6 +351,10 @@ export default class BitBuddies {
 
         }
 
+    }
+
+    checkIfLeavingHome() {
+        return this.home.checkIfTouchingDoor()
     }
 
 

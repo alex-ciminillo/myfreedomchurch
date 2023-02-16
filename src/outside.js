@@ -4,12 +4,11 @@ import AvatarImg from './../images/mana/char_a_p1/char_a_p1_0bas_humn_v01.png'
 import House from './../images/home/avatarStartingHouse2.png'
 
 
-export default class Home {
+export default class Outside {
     constructor(canvas, ctx, dimensions) {
         this.canvas = canvas;
         this.ctx = ctx;
         this.dimensions = dimensions;
-
         const dpi = window.devicePixelRatio;
         this.dpi = dpi;
         // the width is .98461538 of the height

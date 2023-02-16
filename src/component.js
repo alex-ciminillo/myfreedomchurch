@@ -201,7 +201,7 @@ export default class Component {
         }
     }
 
-    customAnime(arr) {
+    customAnime(arr, row) {
         this.customArr = arr
         if (this.firstAnimation === true) { 
             this.row = this.customArr[0][0];
@@ -231,6 +231,23 @@ export default class Component {
             
             this.frame = 0; 
         }
+    }
+
+    spriteCustomAnimation(arr, speed, row) {
+        this.row = row;
+        if (this.frame >= speed[this.customSpeedPos]) {
+            this.customArrPos += 1;
+            if (this.customArrPos > arr.length - 1) {
+                this.customArrPos = 0;
+            }
+            this.column = arr[this.customArrPos];
+            this.frame = 0;
+            this.customSpeedPos += 1;
+            if (this.customSpeedPos > speed.length - 1) {
+                this.customSpeedPos = 0;
+            }
+        }
+
     }
 
     pauseAnime() {

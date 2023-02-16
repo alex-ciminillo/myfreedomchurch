@@ -12,11 +12,6 @@ export default class TreasureChest extends Component {
         this.customAnimation = false;
     }
 
-
-
-
-
-
     animate() {
         this.update();
         this.newPos();
@@ -29,7 +24,4 @@ export default class TreasureChest extends Component {
             this.frame++
         }   
     }
-
-
-
 }
