@@ -2,9 +2,6 @@ import _ from 'lodash';
 import './../stylesheets/style.css';
 import BitBuddies from './game.js'
 
-
-// to run game with hot reload, open index.html with vscode live server and then run 'npm run watch'
-
 function component() {
     const outerDiv = document.createElement('div');
     const canvas = document.createElement('canvas');

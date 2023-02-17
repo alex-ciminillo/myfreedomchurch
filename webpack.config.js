@@ -15,7 +15,7 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         favicon: `./src/favicon.ico`,
-        title: 'Tower of Dreams',
+        title: 'Bit Buddies',
       }),
       new webpack.HotModuleReplacementPlugin(),
     ],
