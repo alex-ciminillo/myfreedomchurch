@@ -10,37 +10,59 @@ export default class Home {
         this.ctx = ctx;
         this.dimensions = dimensions;
 
-        const dpi = window.devicePixelRatio;
-        this.dpi = dpi;
-        // the width is .98461538 of the height
-        this.avatarHeight = 65 / dpi * 3
-        this.avatarWidth = 64 / dpi * 3
+        const dpi = 1;
+        this.dpi = 1;
+
+        // 65, 64
+        // 86.66666666, 85.33333333
+        // 97.5, 96
+        // 108.3333333, 106.66666666
+        // 130, 128
+        // 151.6666666, 149.333333333
+
+        // this.avatarHeight = this.houseHeight * .19 * 2
+        // this.avatarWidth = this.avatarHeight * .98461538
+
+        let avatarTempWidth = this.canvas.width * 0.49230769230769234
+
+
+        this.avatarWidth = (avatarTempWidth % 64) >= 2.5 ? parseInt(avatarTempWidth / 64) * 64 + 64 : parseInt(avatarTempWidth / 64) * 64
+        this.avatarHeight = (this.avatarWidth / 64) * 65;
+        
+        this.canvasAvatarRatio = (this.avatarWidth / 64)
+
+        console.log(this.avatarWidth)
+        console.log((64 * 3) / this.canvas.width)
+        // 0.49230769230769234
+
         this.avatarScale = .8
-        this.adventureGuy = new Avatar(this.avatarWidth, this.avatarHeight, AvatarImg, this.canvas.width / dpi / 2 - this.avatarWidth / 1.5, this.canvas.height / dpi / 2 - this.avatarHeight / 2, this.ctx, "sprite", 5, 3, 64, 65, 64, 65, 0, 'toeTapDown', 7);
-        // this.adventureGuyBoundingBox = new Component(this.avatarWidth / 3 - 6, this.avatarHeight / 2, "blue", this.adventureGuy.x + 24, this.adventureGuy.y + 11, this.ctx, "block")
+        this.adventureGuy = new Avatar(this.avatarWidth, this.avatarHeight, AvatarImg, this.canvas.width / dpi / 2 - this.avatarWidth / 1.5, this.canvas.height / dpi / 2 - this.avatarHeight / 2, this.ctx, "sprite", 5, 3, 64, 65, 64, 65, 0, 'toeTapDown', 7, this.canvasAvatarRatio);
+        // this.adventureGuyBoundingBox = new Component(this.avatarWidth / 4.99, this.avatarHeight / 2.15, "blue", this.adventureGuy.x * this.avatarWidth / 90, this.adventureGuy.y * this.avatarHeight / 175, this.ctx, "block")
         // this.adventureGuy = new Avatar(65, 65, AvatarImg, this.canvas.width / 8 - this.avatarWidth / 2, this.canvas.height / 8 - this.avatarHeight / 4, this.ctx, "sprite", 5, 3, 64, 65, 50 * .98461538, 50, 0, 'toeTapDown', 7);
 
         // this.adventureGuy.toggleHat()
 
         //house width x height
-        this.originalHousePixels = [319, 380]
-        this.houseWidth = (136 / dpi) * 3
-        this.houseHeight = (170 / dpi) * 3
-        this.houseX = (this.canvas.width / dpi) / 2 - this.houseWidth / 2
-        this.houseY = (this.canvas.height / dpi) / 2  - this.houseHeight / 2
+
+        this.houseRatio = 170/136
+        this.houseWidth = 136 * this.canvasAvatarRatio;
+        this.houseHeight = 170 * this.canvasAvatarRatio;
+        this.houseX = (this.canvas.width) / 2 - this.houseWidth / 2
+        this.houseY = (this.canvas.height) / 2  - this.houseHeight / 2
 
         this.house = new Component(this.houseWidth, this.houseHeight, House, this.houseX, this.houseY, this.ctx, "image")
-
-        this.bedX = 5 / dpi;
-        this.bedY = 395 / dpi;
-        this.bedWidth = 90 / dpi;
-        this.bedHeight = 160 / dpi;
+        
+        
+        this.bedX = this.canvas.width / 2 - 64 * this.canvasAvatarRatio;
+        this.bedY = this.canvas.height / 2 - 10 * this.canvasAvatarRatio;
+        this.bedWidth = 32 * this.canvasAvatarRatio;
+        this.bedHeight = 55 * this.canvasAvatarRatio;
         this.bed = new Component(this.bedWidth, this.bedHeight, "invisible", this.bedX, this.bedY, this.ctx, "block")
 
-        this.doorX = 147 / dpi;
-        this.doorY = 230 / dpi; 
-        this.doorWidth = 93 / dpi;
-        this.doorHeight = 88 / dpi;
+        this.doorX = 147;
+        this.doorY = 230; 
+        this.doorWidth = 93;
+        this.doorHeight = 88;
         this.door = new Component(this.doorWidth, this.doorHeight, "invisible", this.doorX, this.doorY, this.ctx, "block")
 
 
@@ -50,6 +72,7 @@ export default class Home {
         this.instaElements = [];
 
         this.clickedBed = false;
+
     }
 
 
@@ -77,7 +100,7 @@ export default class Home {
 
     checkIfClickedObject() {
         this.checkIfClickedBed(this.gx, this.gy)
-        this.checkIfClickedDoor(this.gx, this.gy)
+        // this.checkIfClickedDoor(this.gx, this.gy)
     }
 
     askIfTraining() {
@@ -94,7 +117,7 @@ export default class Home {
 
     checkIfLayingInBed() {
         if (this.adventureGuy.intersecting(this.bed) && this.clickedBed) {
-            this.adventureGuy.layInBed(this.bedX, this.bedY)
+            this.adventureGuy.layInBed(this.bedX, this.bedY, this.bedWidth, this.bedHeight)
             this.clickedBed = false;
         } 
     }
@@ -119,15 +142,18 @@ export default class Home {
     
 
     boundaries() {
-        let xBoundRight = 0 - this.adventureGuy.width + 125 / this.dpi;
-        let xBoundLeft = this.houseWidth - this.adventureGuy.width + 43 / this.dpi;
-        let yBoundBottom = this.houseY + this.houseHeight - this.adventureGuy.height + 30 / this.dpi;
-        let yBoundTop = this.houseY + 30 / this.dpi;
-        if (this.adventureGuy.x < xBoundRight) {
+        let xBoundRight = this.houseX + this.houseWidth - 40 * this.canvasAvatarRatio
+        let xBoundLeft = this.houseX - 20 * this.canvasAvatarRatio;
+        let yBoundBottom = this.houseY + this.houseHeight - this.adventureGuy.height + 15 * this.canvasAvatarRatio;
+        let yBoundTop = this.houseY + 12 * this.canvasAvatarRatio;
+
+
+
+        if (this.adventureGuy.x > xBoundRight) {
             this.adventureGuy.x = xBoundRight;
             this.adventureGuy.speedX = 0;
             this.adventureGuy.speedY = 0;
-        } else if (this.adventureGuy.x > xBoundLeft) {
+        } else if (this.adventureGuy.x < xBoundLeft) {
             this.adventureGuy.x = xBoundLeft;
             this.adventureGuy.speedX = 0;
             this.adventureGuy.speedY = 0;
@@ -181,6 +207,8 @@ export default class Home {
         this.door.update();
 
         this.adventureGuy.animate();
+        // this.adventureGuyBoundingBox.update();
+
 
 
         this.frame++

@@ -18,7 +18,7 @@ export default class BitBuddies {
         this.ctx.imageSmoothingEnabled = false;
         const dpi = window.devicePixelRatio; // should probably use this later (maybe?)
         this.dpi = dpi;
-        this.ctx.scale(dpi, dpi);
+        // this.ctx.scale(dpi, dpi);
         // this.tower = new Tower(this.ctx, 0, 0, this.canvas)
         this.dimensions = { width: canvas.width, height: canvas.height };
         // this.title = new Title(this.canvas, this.ctx, this.dimensions);

@@ -25,7 +25,7 @@ export default class Component {
         this.spriteCropRow4A = spriteCropRow4A ? spriteCropRow4A : this.frameHeight;
         this.spriteCropRow6A = spriteCropRow6A ? spriteCropRow6A : 0;
         this.spriteCropRow4And8B = spriteCropRow4And8B ? spriteCropRow4And8B : 0;
-        this.dpi = window.devicePixelRatio;
+        this.dpi = 1;
     }
 
 

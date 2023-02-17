@@ -15,7 +15,7 @@ import Attachment from "./attachment";
 
 export default class Avatar extends Component {
 
-    constructor(width, height, color, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight, anime, columnLength) {
+    constructor(width, height, color, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight, anime, columnLength, ratio) {
         super(width, height, color, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight,)
         this.anime = anime;
         this.frame = 0;
@@ -24,8 +24,10 @@ export default class Avatar extends Component {
         this.clickedSpotx = 0;
         this.clickedSpoty = 0;
         this.wearingHat = true;
-        this.walking = false;
+        this.walking = true;
         this.movingToMouse = true;
+
+        this.ratio = ratio;
 
         this.currentPage = "p1"
         this.baseSkin = "char_a_p1_0bas_humn_v01";
@@ -82,11 +84,9 @@ export default class Avatar extends Component {
         this.outfit = new Attachment(width, height, char_a_p1_1out_fstr_v05, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight, anime, columnLength)
 
 
-        if (this.wearingHat) {
-            this.hair = new Attachment(width, height, char_a_p1_4har_bob1_v01, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight, anime, columnLength, 20, this.row, this.height, 20, 40)
-        } else {
-            this.hair = new Attachment(width, height, char_a_p1_4har_bob1_v01, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight, anime, columnLength, this.wearingHat, 'hair')
-        }
+        
+        this.hair = new Attachment(width, height, char_a_p1_4har_bob1_v01, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight, anime, columnLength, this.wearingHat, 'hair')
+        
 
         
         this.hat = new Attachment(width, height, char_a_p1_5hat_pnty_v03, x, y, ctx, type, row, column, frameWidth, frameHeight, frameWidthSize, frameHeightSize, rowHeight, anime, columnLength)
@@ -98,17 +98,9 @@ export default class Avatar extends Component {
 
     toggleHat() {
         if (this.wearingHat) {
-            this.wearingHat = false;
-            this.hair.height = this.height;
-            this.hair.y = this.y;
-            this.hair.frameHeightSize = this.frameHeightSize;
-            this.hair.rowHeight = this.rowHeight;
+            
         } else {
-            this.wearingHat = true;
-            this.hair.height = this.height - this.hair.spriteCropRow4And8B;
-            this.hair.y = this.y + this.hair.spriteCropRow2And6A;
-            this.hair.frameHeightSize = this.frameHeightSize - 40;
-            this.hair.rowHeight = this.rowHeight + 20;
+            
          }
     }
 
@@ -223,16 +215,16 @@ export default class Avatar extends Component {
             } else if (this.dir(gx, gy) === "down") {
             this.walking ? this.initMove(0, 4, "walkDown") : this.initMove(0, 4, "runDown")
             }
-            this.moveToMouse(gx, gy, 0.8)
-
+            this.moveToMouse(gx, gy, 0.4 / (this.ratio / 3))
+            console.log(this.ratio)
             this.checkSpeed()
         }
 
     }
 
-    layInBed(bedX, bedY) {
+    layInBed(bedX, bedY, bedWidth, bedHeight) {
         this.layingInBed = true;
-        this.x = bedX - this.width / 4;
+        this.x = bedX + (bedWidth / 2) - this.width / 2;
         this.y = bedY;
         this.speedX = 0;
         this.speedY = 0;
@@ -271,23 +263,25 @@ export default class Avatar extends Component {
     }
 
     intersecting = (object) => {
-        var myleft = Number(this.x + 24);
-        var myright = Number(this.x + 24) + (this.width / 3 - 6);
-        var mytop = Number(this.y + 11);
-        var mybottom = Number(this.y + 11) + (this.height / 2);
-        var otherleft = Number(object.x);
-        var otherright = Number(object.x) + (object.width);
-        var othertop = Number(object.y);
-        var otherbottom = Number(object.y) + (object.height);
-        var intersect = true;
-        if ((mybottom < othertop) ||
-        (mytop > otherbottom) ||
-        (myright < otherleft) ||
-        (myleft > otherright)) {
+        this.myleft = Number(this.x + (this.width / 2) - ((this.width / 4.99) / 2));
+        this.myright = Number(this.x + (this.width / 2) + ((this.width / 4.99) / 2));
+        this.mytop = Number(this.y + (this.height / 2) - ((this.height / 2.15) / 2));
+        this.mybottom = Number(this.y + (this.height / 2) + ((this.height / 2.15) / 4));
+        let otherleft = Number(object.x);
+        let otherright = Number(object.x) + (object.width);
+        let othertop = Number(object.y);
+        let otherbottom = Number(object.y) + (object.height);
+        let intersect = true;
+        if ((this.mybottom < othertop) ||
+        (this.mytop > otherbottom) ||
+        (this.myright < otherleft) ||
+        (this.myleft > otherright)) {
             intersect = false;
         }
         return intersect;
     }
+
+    // this.adventureGuyBoundingBox = new Component(this.avatarWidth / 4.99, this.avatarHeight / 2.15, "blue", this.adventureGuy.x * 2.12, this.adventureGuy.y * 1.115, this.ctx, "block")
 
     syncAttachments() {
 
@@ -380,7 +374,7 @@ export default class Avatar extends Component {
         }
         
         this.outfit.animate();
-        this.hair.animate();
+        if (!this.wearingHat) this.hair.animate();
         if (this.wearingHat) this.hat.animate();
         
     }
