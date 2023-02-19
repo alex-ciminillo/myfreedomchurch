@@ -6,6 +6,7 @@ import Component from "./component"
 import EventListener from './eventListener.js'
 import Tower from './tower.js'
 import Training from './training.js'
+import StudyPage from './studyPage.js'
 
 
 
@@ -24,6 +25,7 @@ export default class BitBuddies {
         // this.title = new Title(this.canvas, this.ctx, this.dimensions);
         this.blackScreen = new BlackScreen(this.canvas, this.ctx, this.dimensions);
         this.home = new Home(this.canvas, this.ctx, this.dimensions);
+        this.studyPage = new StudyPage(this.canvas, this.ctx, this.dimensions);
         this.outside = new Outside(this.canvas, this.ctx, this.dimensions);
         this.eventListener = new EventListener(this.canvas, this.ctx, this.dimensions);
         this.editButton = new Component(20.67, 6.21, "invisible", 278.51, 143.57, this.ctx, "other");
@@ -50,12 +52,12 @@ export default class BitBuddies {
         // used to start fps function and then animation function
         this.startAnimating(60);
 
-        this.currentScreen = "Home"
+        this.currentScreen = "StudyPage"
         this.fadeScreen = false;
 
         if (this.checkCookie("reward") === "yes") { this.home.getTheItem = true; }
         if (this.checkCookie("start") === "true") {
-            this.currentScreen = "Home"
+            this.currentScreen = "StudyPage"
         } else {
             this.home.startPulsingGlow();
         }
@@ -124,9 +126,16 @@ export default class BitBuddies {
             else if (this.currentScreen === "Home") { this.homeClick(e) }
             else if (this.currentScreen === "Training") { this.trainingClick(e) }
             else if (this.currentScreen === "Tower") { this.towerClick(e) }
+            else if (this.currentScreen === "StudyPage") { this.studyClick(e) }
         }
 
         // console.log(this.gx, this.gy)
+    }
+
+    studyClick(e) {
+        this.studyPage.gx = this.gx;
+        this.studyPage.gy = this.gy;
+        this.studyPage.click(e)
     }
 
     towerClick(e) {
@@ -304,7 +313,8 @@ export default class BitBuddies {
         else if (this.currentScreen === "Black Screen") { this.blackScreen.animate(); }
         else if (this.currentScreen === "Home") { this.home.animate(this.e); }
         else if (this.currentScreen === "Training") { this.training.animate(this.gx, this.gy); }
-        else if (this.currentScreen === "Tower") { this.tower.animate(this.gx, this.gy); }
+        else if (this.currentScreen === "Tower") { this.tower.animate(this.gx, this.gy) }
+        else if (this.currentScreen === "StudyPage") { this.studyPage.animate(this.gx, this.gy); }
     }
 
 
