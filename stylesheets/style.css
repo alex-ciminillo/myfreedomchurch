@@ -59,7 +59,8 @@ a:hover {
 }
 
 canvas {
-  background-color: rgb(32,29,30);
+  /* background-color: rgb(32,29,30); */
+  background-color: black;
 }
 
 .outerDiv {

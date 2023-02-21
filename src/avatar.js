@@ -216,7 +216,6 @@ export default class Avatar extends Component {
             this.walking ? this.initMove(0, 4, "walkDown") : this.initMove(0, 4, "runDown")
             }
             this.moveToMouse(gx, gy, 0.4 / (this.ratio / 3))
-            console.log(this.ratio)
             this.checkSpeed()
         }
 

@@ -26,60 +26,60 @@ export default flashCards = {
         back: "thank you for the meal (after)"
     },
     7: {
-        front: "konnichiha",
-        back: "hello"
+        front: "gaikou",
+        back: "diplomacy"
     },
     8: {
-        front: "konnichiha",
-        back: "hello"
+        front: "saikin",
+        back: "recently"
     },
     9: {
-        front: "konnichiha",
-        back: "hello"
+        front: "kinnen",
+        back: "recent years"
     },
     10: {
-        front: "konnichiha",
-        back: "hello"
+        front: "todokoro",
+        back: "example"
     },
     11: {
-        front: "konnichiha",
-        back: "hello"
+        front: "tanoshii",
+        back: "fun"
     },
     12: {
-        front: "konnichiha",
-        back: "hello"
+        front: "omoshiroi",
+        back: "interesting"
     },
     13: {
-        front: "konnichiha",
-        back: "hello"
+        front: "kirei",
+        back: "pretty"
     },
     14: {
-        front: "konnichiha",
-        back: "hello"
+        front: "oto",
+        back: "sound"
     },
     15: {
-        front: "konnichiha",
-        back: "hello"
+        front: "koe",
+        back: "voice"
     },
     16: {
-        front: "konnichiha",
-        back: "hello"
+        front: "kutsu",
+        back: "shoes"
     },
     17: {
-        front: "konnichiha",
-        back: "hello"
+        front: "tsukue",
+        back: "desk"
     },
     18: {
-        front: "konnichiha",
-        back: "hello"
+        front: "naka",
+        back: "middle"
     },
     19: {
-        front: "konnichiha",
-        back: "hello"
+        front: "ue",
+        back: "up"
     },
     20: {
-        front: "konnichiha",
-        back: "hello"
+        front: "shita",
+        back: "down"
     }
 
 }

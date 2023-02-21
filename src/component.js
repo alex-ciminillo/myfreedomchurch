@@ -30,6 +30,7 @@ export default class Component {
 
 
     update = (a) => {
+        this.ctx.globalCompositeOperation = 'source-over';
         if (this.type === "text") {
             this.ctx.font = this.width + " " + this.height;
             this.ctx.fillStyle = this.color;
@@ -92,6 +93,18 @@ export default class Component {
             this.height - this.spriteCropRow4And8B);
             
             
+        } else if (this.type === "flashcardimage") {
+
+            
+
+        } else if (this.type === "flashcardcolor") {
+
+            this.ctx.fillStyle = this.color;
+            this.ctx.beginPath();
+            this.ctx.roundRect(this.x, this.y, this.width, this.height, 10);
+            this.ctx.stroke();
+            this.ctx.fill();
+
         } else {
             if (this.color === "invisible") {
                 this.ctx.fillStyle = 'rgba(0,0,0,0)'
