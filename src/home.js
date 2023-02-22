@@ -27,7 +27,7 @@ export default class Home {
         this.avatarWidth = (avatarTempWidth % 64) >= 2.5 ? parseInt(avatarTempWidth / 64) * 64 + 64 : parseInt(avatarTempWidth / 64) * 64
         this.avatarHeight = (this.avatarWidth / 64) * 65;
         this.canvasAvatarRatio = (this.avatarWidth / 64)
-        this.adventureGuy = new Avatar(this.avatarWidth, this.avatarHeight, AvatarImg, this.canvas.width / dpi / 2 - this.avatarWidth / 1.5, this.canvas.height / dpi / 2 - this.avatarHeight / 2, this.ctx, "sprite", 5, 3, 64, 65, 64, 65, 0, 'toeTapDown', 7, this.canvasAvatarRatio);
+        this.adventureGuy = new Avatar(this.avatarWidth, this.avatarHeight, AvatarImg, this.canvas.width / 2 - this.avatarWidth / 1.5, this.canvas.height / 2 - this.avatarHeight / 2, this.ctx, "sprite", 5, 3, 64, 65, 64, 65, 0, 'toeTapDown', 7, this.canvasAvatarRatio);
         // this.adventureGuyBoundingBox = new Component(this.avatarWidth / 4.99, this.avatarHeight / 2.15, "blue", this.adventureGuy.x * this.avatarWidth / 90, this.adventureGuy.y * this.avatarHeight / 175, this.ctx, "block")
         // this.adventureGuy = new Avatar(65, 65, AvatarImg, this.canvas.width / 8 - this.avatarWidth / 2, this.canvas.height / 8 - this.avatarHeight / 4, this.ctx, "sprite", 5, 3, 64, 65, 50 * .98461538, 50, 0, 'toeTapDown', 7);
 

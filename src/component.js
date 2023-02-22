@@ -127,7 +127,9 @@ export default class Component {
     newPos = (a) => {
         this.x += this.speedX;
         this.y += this.speedY;  
+        
         if (this.type === "background") {
+            console.log(this.x)
             if (this.x === -(this.width)) {
                 this.x = 0;
             }

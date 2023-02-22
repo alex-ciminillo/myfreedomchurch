@@ -122,22 +122,25 @@ export default class Avatar extends Component {
         } else if (this.speedX < 0 && Math.abs(this.speedX) > Math.abs(this.speedY)) {
             this.walking ? this.anime = "walkLeft" : this.anime = "runLeft"
         } else if (this.speedX === 0 && (this.anime === "walkLeft" || this.anime === "runLeft")) {
-            this.initMove(0, 3, "idleLeft")
+            // this.initMove(0, 3, "idleLeft")
         } else if (this.speedX === 0 && (this.anime === "walkRight" || this.anime === "runRight")) {
-            this.initMove(0, 2, "idleRight")
+            // this.initMove(0, 2, "idleRight")
         } else if (this.speedY > 0) {
             this.walking ? this.anime = "walkDown" : this.anime = "runDown"
         } else if (this.speedY < 0) {
             this.walking ? this.anime = "walkUp" : this.anime = "runUp"
         } else if (this.speedY === 0 && (this.anime === "walkUp" || this.anime === "runUp")) {
-            this.initMove(0, 1, "idleUp")
+            // this.initMove(0, 1, "idleUp")
         } else if (this.speedY === 0 && (this.anime === "walkDown" || this.anime === "runDown")) {
-            this.initMove(0, 0, "idleDown")
+            // this.initMove(0, 0, "idleDown")
         }
     }
 
 
     initMove(start, row, anime) {
+
+        console.log(anime)
+        console.log("hello")
 
         if (anime === 'toeTapDown' || anime === "restArmOnSideDown" ||
         anime === 'toeTapUp' || anime === "restArmOnSideUp" || 
