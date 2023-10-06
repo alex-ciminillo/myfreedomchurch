@@ -6,6 +6,27 @@
 }
 
 @font-face {
+  font-family: 'Pretty';
+  src: url('./../fonts/pretty.woff2') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon';
+  src: url('./../fonts/BrandonGrotesque.woff2') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon-Thick';
+  src: url('./../fonts/BrandonGrotesque-Thick.woff2') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'PixelFont';
   src: url('./../fonts/pixel/pixelFont.ttf') format('truetype');
   font-weight: 600;
@@ -26,129 +47,70 @@
   font-style: normal;
 }
 
-.footer {
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* end reset */
+
+
+object {
   width: 100%;
-  margin-top: calc(1vw + 1vh + 88.5vmin); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-a:hover {
-  color: #fff;
-}
-
-.git img {
-  width: 25px;
-  filter: invert(80%);
-}
-
-
-.git img:hover {
-  filter: invert(100%);
-}
-
-.git {
-  margin: 0 0 0 10px;
-}
-
-.span1 {
-  font-family: 'PressStart2P';
-  color: rgb(189, 189, 189);
-  font-size: 16px;
-}
-
-canvas {
-  /* background-color: rgb(32,29,30); */
-  background-color: black;
-}
-
-.outerDiv {
-  display: flex;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  height: 100vh;
 }
 
 body {
-  overflow-y: hidden;
+  overflow-y: scroll;
   overflow-x: hidden;
-  background-color: rgb(27, 27, 27);
-  cursor: url('./../images/newCursor.png'), auto;
+  background-color: gray;
 }
-
-.title_text {
-  font-family: 'TitleScreen';
-}
-
-
-.left_adventure {
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-  filter: FlipH;
-}
-
-
-
-
-
-/* flip card start */
-
-.flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-/* .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-} */
-
-.flip-the-card-action {
-  transform: rotateY(-180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  color: black;
-}
-
-.flip-card-back {
-  color: white;
-  transform: rotateY(180deg);
-}
-
-
-/* flip card end */
-
-
-/* rotate card start */
-
-.rotate-card {
-  animation: rotate 5s linear both;
-}
-
-
-
-/* rotate card end */
-

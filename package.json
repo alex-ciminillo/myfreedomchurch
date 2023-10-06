@@ -1,5 +1,5 @@
 {
-  "name": "bit_buddies",
+  "name": "freedom_church",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -36,9 +36,15 @@
     "@capacitor/android": "^4.6.2",
     "@capacitor/core": "^4.6.2",
     "@capacitor/ios": "^4.6.2",
+    "@capacitor/preferences": "^4.0.2",
+    "@capacitor/push-notifications": "^4.1.2",
     "@google-cloud/text-to-speech": "^3.4.0",
     "dotenv": "^10.0.0",
+    "firebase": "^9.20.0",
+    "jquery": "^3.6.4",
+    "js-cookie": "^3.0.1",
     "lodash": "^4.17.21",
+    "parse": "^4.0.1",
     "tts-loader": "^0.3.0"
   }
 }

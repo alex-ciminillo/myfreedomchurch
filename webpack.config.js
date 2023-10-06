@@ -14,8 +14,9 @@ module.exports = {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        favicon: `./src/favicon.ico`,
-        title: 'Bit Buddies',
+        title: 'Custom template',
+    // Load a custom template (lodash by default)
+        template: 'indextemplate.html'
       }),
       new webpack.HotModuleReplacementPlugin(),
     ],
@@ -31,7 +32,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|ico|webp)$/i,
         type: 'asset/resource',
       },
       {
@@ -48,6 +49,10 @@ module.exports = {
       },
       {
         test: /\.mp3$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /page\.html$/i,
         loader: 'file-loader'
       },
     ],

@@ -1,20 +1,32 @@
 import _ from 'lodash';
 import './../stylesheets/style.css';
-import BitBuddies from './game.js'
+import './../stylesheets/homepage.css';
+import './../stylesheets/giving.css';
+import './../stylesheets/underconstruction.css';
+import HomePage from './pages/homepage/homepage.html'
+import HomePageJS from './pages/homepage/homepage'
 
-function component() {
-    const outerDiv = document.createElement('div');
-    const canvas = document.createElement('canvas');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    // canvas.style.width = `${window.innerWidth}px`;
-    // canvas.style.height = `${window.innerHeight}px`;
-    outerDiv.classList.add('outerDiv');
-    canvas.classList.add('canvas');
-    outerDiv.appendChild(canvas);
-    
-    return [outerDiv, canvas];
-  }
-  let arr = component()
-  document.body.appendChild(arr[0]);
-  const game = new BitBuddies(arr[1]);
+import GivePage from './pages/giving/givingpage.html'
+import GivePageJS from './pages/giving/givingpage.js'
+import $ from 'jquery'
+
+
+
+const start = () => {
+
+  $( "body" ).load( `${HomePage}`, function() {
+    HomePageJS()
+  });
+ 
+
+}
+
+$(document).ready(function(){
+  start()
+})
+
+
+
+
+
+
