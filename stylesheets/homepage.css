@@ -35,13 +35,23 @@
     display: flex;
     justify-content: space-between;
 
-    background: rgba(0, 0, 0, 0.21);
+    /* background-color: var(--mainColor); */
+
+    /* background: rgba(0, 0, 0, 0.21);
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.21) 0%, rgba(231, 56, 39, 0) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.21)), color-stop(100%, rgba(231, 56, 39, 0)));
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.21) 0%, rgba(231, 56, 39, 0) 100%);
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0.21) 0%, rgba(231, 56, 39, 0) 100%);
     background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.21) 0%, rgba(231, 56, 39, 0) 100%);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.21) 0%, rgba(231, 56, 39, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.21) 0%, rgba(231, 56, 39, 0) 100%); */
+
+    background: rgba(0, 0, 0, 0.21);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.71) 0%, rgba(231, 56, 39, 0) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.21)), color-stop(100%, rgba(231, 56, 39, 0)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.71) 0%, rgba(231, 56, 39, 0) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.10) 0%, rgba(231, 56, 39, 0) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.71) 0%, rgba(231, 56, 39, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.51) 0%, rgba(231, 56, 39, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#e73827', GradientType=0);
     position: fixed;
 }
@@ -113,12 +123,11 @@
 
 .homepage-navbar-church-toggle {
     width: auto;
-    background-color: rgba(0, 0, 0, 0.367);
-
+    background-color: rgba(0, 0, 0, 0.507);
 }
 
 .homepage-navbar-church-toggle div:hover {
-    color: #1abc9c !important;
+    color:var(--mainColor) !important;
 }
 
 .homepage-navbar-church-toggle-container {
@@ -159,16 +168,17 @@
     top: 0;
     position: absolute;
     z-index: -1;
+    width: 100vw;
 }
 
 .homepage-content {}
 
 .homepage-welcome-img {
     width: 100vw;
-    height: 100vh;
+    height: 6rem;
     background-image: url('./../images/homepage/freedomChurchHomepage.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: center bottom;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -188,7 +198,7 @@
 }
 
 .homepage-footer {
-    background-color: #1abc9c;
+    background-color: var(--mainColor);
 }
 
 .homepage-footer-top {
@@ -521,7 +531,7 @@ a:visited {
 .contact-us-form-new-here {
     font-family: 'Brandon';
     font-size: 15px;
-    color: #1abc9c;
+    color: var(--mainColor);
     padding-top: 90px;
     padding-bottom: 10px;
 }
@@ -563,7 +573,7 @@ hr {
     width: 100vw;
     height: 100%;
     position: absolute;
-    background-color: #1abc9c;
+    background-color: var(--mainColor);
     opacity: 0;
     transition: opacity 0.3s ease-in;
 }
@@ -639,7 +649,7 @@ hr {
 
 .homepage-menu-cover-body-right>div:hover {
     background-color: white;
-    color: #1abc9c;
+    color: var(--mainColor);
 }
 
 .homepage-menu-cover-body-left {
@@ -722,8 +732,7 @@ hr {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-
+    /* padding-top: 3rem; */
 }
 
 .homepage-welcome-text-left {
@@ -732,7 +741,7 @@ hr {
 }
 
 .homepage-welcome-text-left>div:first-child {
-    color: #1abc9c;
+    color: var(--mainColor);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     padding-bottom: 15px;
@@ -755,7 +764,7 @@ hr {
 }
 
 .homepage-welcome-text-left>div:nth-child(3)>span {
-    color: #1abc9c;
+    color: var(--mainColor);
     font-weight: bold;
 }
 
@@ -770,7 +779,7 @@ hr {
 }
 
 .homepage-welcome-text-left>button:hover {
-    color: #1abc9c;
+    color: var(--mainColor);
 }
 
 
@@ -921,7 +930,7 @@ hr {
 .loader {
     border: 16px solid #e8e8e8;
     /* Light grey */
-    border-top: 16px solid #1abc9c;
+    border-top: 16px solid var(--mainColor);
     /* Blue */
     border-radius: 50%;
     width: 100px;
@@ -957,6 +966,7 @@ hr {
     }
 
     .homepage-navbar {
+        border: 10px solid black;
         width: 100vw;
         height: 45px;
         display: flex;
@@ -975,7 +985,7 @@ box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
         color: black;
     }
 
-   
+
 
     .homepage-navbar-left {
         display: none;
@@ -1018,13 +1028,6 @@ box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
 
     #homepage-navbar-menu i {
         color: black;
-    }
-
-    
-
-
-    .homepage-welcome-img {
-        height: 30vh;
     }
 
     .homepage-welcome-img-text-one {
@@ -1352,17 +1355,17 @@ box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
 
     #homepage-navbar-location i {
         filter: invert(0%) sepia(91%) saturate(3647%) hue-rotate(88deg) brightness(102%) contrast(107%);;
-    
+
     }
 
     #homepage-navbar-magnifying-glass i {
         filter: invert(0%) sepia(91%) saturate(3647%) hue-rotate(88deg) brightness(102%) contrast(107%);;
-    
+
     }
 
     .homepage-navbar-church-button i {
         filter: invert(0%) sepia(91%) saturate(3647%) hue-rotate(88deg) brightness(102%) contrast(107%);;
-    
+
     }
 
 }
