@@ -8,6 +8,9 @@ import HomePageJS from './pages/homepage/homepage'
 
 import GivePage from './pages/giving/givingpage.html'
 import GivePageJS from './pages/giving/givingpage.js'
+
+import BeliefsPage from './pages/beliefs/beliefspage.html'
+import BeliefsPageJS from './pages/beliefs/beliefspage.js'
 import $ from 'jquery'
 
 
@@ -15,18 +18,14 @@ import $ from 'jquery'
 const start = () => {
 
   $( "body" ).load( `${HomePage}`, function() {
-    HomePageJS()
+    // HomePageJS()
+    // GivePageJS()
+    // BeliefsPageJS()
   });
- 
+
 
 }
 
 $(document).ready(function(){
   start()
 })
-
-
-
-
-
-
