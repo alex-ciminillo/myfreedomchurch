@@ -4,17 +4,22 @@ import Cookies from 'js-cookie';
 import GivePage from './../../pages/giving/givingpage.html'
 import GivePageJS from './../../pages/giving/givingpage.js'
 
+import BeliefsPage from './../../pages/beliefs/beliefspage.html'
+import BeliefsPageJS from './../../pages/beliefs/beliefspage.js'
+
 import HomePage from './../../pages/homepage/homepage.html'
 import HomePageJS from './../../pages/homepage/homepage.js'
 
 import ChurchLogo from './../../../images/ChurchLogo.svg'
+
+
 
 export default function menupage() {
 
     $("#homepage-navbar-left-logo").attr("src", `${ChurchLogo}`)
 
   addEventListeners()
-  
+
   // document.getElementById("contact-us-form").scrollIntoView();
 }
 
@@ -39,7 +44,7 @@ function addEventListeners() {
 
 
     $("#homepage-menu-cover-navbar-exit").on('click', function(){
-        
+
         $("#homepage-menu-cover").removeClass("opacity-one")
         setTimeout(()=>{
             $("#homepage-menu-cover").addClass("display-none")
@@ -78,7 +83,7 @@ function addEventListeners() {
     })
 
     $("#homepage-menu-cover-body-right-give-online").on('click', function(){
-        
+
         $("#homepage-menu-cover").removeClass("opacity-one")
         setTimeout(()=>{
             $("#homepage-menu-cover").addClass("display-none")
@@ -88,6 +93,22 @@ function addEventListeners() {
 
             $( "body" ).load( `${GivePage}`, function() {
                 GivePageJS()
+              });
+
+        }, 400)
+    })
+
+    $("#menu-beliefs").on('click', function(){
+
+        $("#homepage-menu-cover").removeClass("opacity-one")
+        setTimeout(()=>{
+            $("#homepage-menu-cover").addClass("display-none")
+            $("#homepage-navbar").removeClass("position-static")
+            $("#homepage-navbar").removeClass("display-none")
+            $("body").removeClass("overflow-hidden")
+
+            $( "body" ).load( `${BeliefsPage}`, function() {
+                BeliefsPageJS()
               });
 
         }, 400)
@@ -121,7 +142,3 @@ function addEventListeners() {
     })
 
 }
-
-
-
-
