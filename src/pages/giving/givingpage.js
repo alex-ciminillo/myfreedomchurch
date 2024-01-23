@@ -18,7 +18,7 @@ import UnderConstructionPageJS from './../../components/underconstruction/underc
 
 import TithingImg from './../../../images/giving/tithe.jpeg'
 
-export default function homepage() {
+export default function givingpage() {
 
     $("#giving-intro-pic-img").attr("src", `${TithingImg}`)
 
@@ -45,12 +45,10 @@ export default function homepage() {
         NavbarPageJS()
     });
 
-    
+
 }
 
 
 function addEventListeners() {
 
 }
-
-

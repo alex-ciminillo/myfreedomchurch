@@ -17,10 +17,14 @@ import $ from 'jquery'
 
 const start = () => {
 
-  $( "body" ).load( `${HomePage}`, function() {
+  $( "body" ).load(
+    // `${HomePage}`,
+    // `${GivePage}`,
+    `${BeliefsPage}`,
+    function() {
     // HomePageJS()
     // GivePageJS()
-    // BeliefsPageJS()
+    BeliefsPageJS()
   });
 
 
