@@ -1,8 +1,38 @@
 .border {
-    border: 10px solid black;
+    border: 1px solid black;
 }
 
+.border-right {
+    border-right: 1px solid black;
+}
 
-.beliefs-container {
-    width: 10px;
+.flex {
+    display: flex;
+}
+
+.beliefs-page-container {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.beliefs-grid{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+.beliefs-key {
+    display: flex;
+    flex-direction: column;
+    align-items: last baseline;
+
+    padding: 1rem 1rem 1rem;
+}
+
+.beliefs-value {
+    padding: 1rem 1rem 1rem;
 }

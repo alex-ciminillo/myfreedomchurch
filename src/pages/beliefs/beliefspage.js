@@ -16,11 +16,7 @@ import NavbarPageJS from './../../components/navbar/navbarpage.js'
 import UnderConstructionPageHtml from './../../components/underconstruction/underconstructionpage.html'
 import UnderConstructionPageJS from './../../components/underconstruction/underconstructionpage.js'
 
-import TithingImg from './../../../images/giving/tithe.jpeg'
-
 export default function beliefspage() {
-
-    $("#giving-intro-pic-img").attr("src", `${TithingImg}`)
 
     addEventListeners()
     document.getElementById("homepage-body-id").scrollIntoView();
@@ -50,5 +46,7 @@ export default function beliefspage() {
 
 
 function addEventListeners() {
-
+    $("#gospel-text").on('click', function(){
+        $("#gospel-display").removeClass("display-none");
+    });
 }
