@@ -5,6 +5,10 @@
 
 .main-text-color {
   color: var(--mainColor);
+  /* background-color: var(--mainColor);
+  padding-right: 1rem;
+  color: white;
+  border-radius: 15px; */
 }
 
 .second-text-color {

@@ -44,7 +44,6 @@ export default function beliefspage() {
 
 }
 
-
 function addEventListeners() {
    $(".beliefs-key-text").on('click', function(){
         const displayId = $(this).data("display");
