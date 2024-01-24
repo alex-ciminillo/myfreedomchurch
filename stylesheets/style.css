@@ -1,5 +1,14 @@
 :root {
   --mainColor: #1abc9c;
+  --secondColor: gray;
+}
+
+.main-text-color {
+  color: var(--mainColor);
+}
+
+.second-text-color {
+  color: var(--secondColor);
 }
 
 @font-face {

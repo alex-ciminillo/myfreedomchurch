@@ -50,6 +50,10 @@ function addEventListeners() {
         const displayId = $(this).data("display");
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
+
+        $(".beliefs-key-text").removeClass("main-text-color");
+
+        $(this).addClass("main-text-color");
     });
 }
 
