@@ -46,7 +46,17 @@ export default function beliefspage() {
 
 
 function addEventListeners() {
-    $("#gospel-text").on('click', function(){
-        $("#gospel-display").removeClass("display-none");
+   $(".beliefs-key-text").on('click', function(){
+        const displayId = $(this).data("display");
+        hideAllDisplays();
+        $("#" + displayId).removeClass("display-none");
     });
 }
+
+function hideAllDisplays() {
+    $(".beliefs-value > div").addClass("display-none");
+}
+
+$(document).ready(function() {
+    addEventListeners();
+})
