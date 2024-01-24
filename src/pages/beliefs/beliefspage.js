@@ -50,9 +50,9 @@ function addEventListeners() {
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
 
-        $(".beliefs-key-text").removeClass("main-text-color");
+        $(".beliefs-key-text").removeClass("small-button");
 
-        $(this).addClass("main-text-color");
+        $(this).addClass("small-button");
     });
 }
 
