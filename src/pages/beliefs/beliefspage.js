@@ -57,30 +57,22 @@ function addEventListeners() {
 
     $(".beliefs-point").on('click', function () {
         const displayId = $(this).data("display");
-        const $displayElement = $("#" + displayId);
+        console.log('displayId: ', displayId)
+        const displayElement = $("#" + displayId);
 
-        $displayElement.toggleClass("display-none");
-        // $displayElement.slideToggle("display-none");
+        $("#" + displayId).removeClass("display-none");
+
+        // displayElement.toggleClass("display-none");
+        displayElement.slideToggle("display-none");
 
 
         // Check if the displayElement now has the class display-none
-        if ($displayElement.hasClass("display-none")) {
-            $(".$displayElement").removeClass("display-none")
+        if (displayElement.hasClass("display-none")) {
+            $("displayElement").removeClass("display-none")
         } else {
-            $(".$displayElement").addClass("display-none")
+            $("displayElement").addClass("display-none")
         }
     });
-
-    // const $beliefDetails = $displayElement.find(".belief-details");
-    // $beliefDetails.slideToggle();
-    // Toggle the display-none class
-
-    // $(".beliefs-point").on('click', function () {
-    //     const displayId = $(this).data("display");
-    //     const $displayElement = $("#" + displayId);
-
-    //     $displayElement.slideToggle();
-    // });
 }
 
 function hideAllDisplays() {
