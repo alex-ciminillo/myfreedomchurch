@@ -136,7 +136,8 @@
 
 /* LEFT TO RIGHT */
 .sliding-u-l-r {
-    display: inline-block;
+    /* display: inline-block; */
+    display: inline;
     cursor: pointer;
 }
 
@@ -151,5 +152,5 @@
 
 .sliding-u-l-r.clicked:after {
     width: 100%;
-    background: blue;
+    background: var(--mainColor);
 }
