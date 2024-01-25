@@ -59,6 +59,7 @@ function addEventListeners() {
         const displayId = $(this).data("display");
         const displayElement = $("#" + displayId);
 
+        $(this).toggleClass('underline');
         displayElement.slideToggle();
     });
 }
