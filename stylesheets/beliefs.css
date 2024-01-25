@@ -100,8 +100,11 @@
 }
 
 .belief-details {
-    /* border: 1px solid black; */
     margin-left: calc(2rem + 10px);
-    /* width: calc(95% + 0.5rem); */
     align-self: flex-end;
+}
+
+.display-none-slide {
+    display: none;
+    animation-duration: 5s;
 }
