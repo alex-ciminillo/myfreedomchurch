@@ -63,7 +63,7 @@ function addEventListeners() {
     });
 
     $(document).ready(function(){
-        $('.sliding-u-l-r').on('click',function(){
+        $('.sliding-underline').on('click',function(){
             $(this).toggleClass('clicked');
         })
     })
