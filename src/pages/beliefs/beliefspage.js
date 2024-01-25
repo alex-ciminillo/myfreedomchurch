@@ -59,7 +59,7 @@ function addEventListeners() {
         const displayId = $(this).data("display");
         const displayElement = $("#" + displayId);
 
-        displayElement.slideToggle();
+        displayElement.slideToggle(500);
     });
 
     $(document).ready(function(){
