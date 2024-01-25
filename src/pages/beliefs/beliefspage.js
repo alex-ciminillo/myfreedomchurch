@@ -59,9 +59,14 @@ function addEventListeners() {
         const displayId = $(this).data("display");
         const displayElement = $("#" + displayId);
 
-        $(this).toggleClass('underline');
         displayElement.slideToggle();
     });
+
+    $(document).ready(function(){
+        $('.sliding-u-l-r').on('click',function(){
+            $(this).toggleClass('clicked');
+        })
+    })
 }
 
 function hideAllDisplays() {

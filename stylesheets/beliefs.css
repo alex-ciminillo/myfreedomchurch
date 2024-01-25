@@ -109,7 +109,7 @@
     align-self: flex-end;
 }
 
-.underline {
+/* .underline {
     position: relative;
 }
 
@@ -132,4 +132,24 @@
 .underline:hover:after {
     width: 100%;
     height: 2px;
+} */
+
+/* LEFT TO RIGHT */
+.sliding-u-l-r {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sliding-u-l-r:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+.sliding-u-l-r.clicked:after {
+    width: 100%;
+    background: blue;
 }
