@@ -45,7 +45,7 @@ export default function beliefspage() {
 }
 
 function addEventListeners() {
-   $(".beliefs-key-text").on('click', function(){
+    $(".beliefs-key-text").on('click', function () {
         const displayId = $(this).data("display");
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
@@ -54,12 +54,27 @@ function addEventListeners() {
 
         $(this).addClass("small-button");
     });
+
+    $(".beliefs-point").on('click', function () {
+        const displayId = $(this).data("display");
+        const $displayElement = $("#" + displayId);
+
+        // Toggle the display-none class
+        $displayElement.toggleClass("display-none");
+
+        // Check if the displayElement now has the class display-none
+        if ($displayElement.hasClass("display-none")) {
+            $(".$displayElement").removeClass("display-none");
+        } else {
+            $(".$displayElement").addClass("display-none");
+        }
+    });
 }
 
 function hideAllDisplays() {
     $(".beliefs-value > div").addClass("display-none");
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     addEventListeners();
 })
