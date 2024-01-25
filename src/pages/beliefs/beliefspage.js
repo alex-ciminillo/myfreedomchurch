@@ -57,21 +57,9 @@ function addEventListeners() {
 
     $(".beliefs-point").on('click', function () {
         const displayId = $(this).data("display");
-        console.log('displayId: ', displayId)
         const displayElement = $("#" + displayId);
 
-        $("#" + displayId).removeClass("display-none");
-
-        // displayElement.toggleClass("display-none");
-        displayElement.slideToggle("display-none");
-
-
-        // Check if the displayElement now has the class display-none
-        if (displayElement.hasClass("display-none")) {
-            $("displayElement").removeClass("display-none")
-        } else {
-            $("displayElement").addClass("display-none")
-        }
+        displayElement.slideToggle();
     });
 }
 
