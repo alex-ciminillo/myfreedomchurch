@@ -69,11 +69,13 @@
     padding: 1% 0% 1% 5%;
 
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
-
     border-radius: 10px;
+
+    @media screen and (min-width: 701px) {
+        font-size: 20px;
+        border-radius: 15px;
+        padding: 10%;
+     }
 }
 
 .selector-button {
@@ -87,11 +89,13 @@
     background-color: var(--mainColor);
     color: white;
     display: flex;
-    /* align-items: center;
-    justify-content: center;
-    text-align: center; */
-
     border-radius: 10px;
+
+    @media screen and (min-width: 701px) {
+       font-size: 20px;
+       border-radius: 15px;
+       padding: 10%;
+    }
 }
 
 .arrow-size {
@@ -145,6 +149,8 @@
 }
 
 .selector-container {
+    width: 8rem;
+
     @media screen and (max-width: 700px) {
         display: none;
     }
