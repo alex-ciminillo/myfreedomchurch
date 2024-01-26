@@ -61,6 +61,7 @@ function addEventListeners() {
         $("#" + displayId).removeClass("display-none");
 
         $(".selector-detail").removeClass("small-button");
+        $(".selector").text($(this).text())
 
         $(this).addClass("small-button");
     });
