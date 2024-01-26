@@ -65,6 +65,8 @@
     font-size: 18px;
     width: 100%;
 
+    padding: 1% 0px 1% 0px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,9 +80,10 @@
     font-size: 18px;
     width: 100%;
 
+    padding: 1% 0px 1% 0px;
+
     background-color: var(--mainColor);
     color: white;
-
     display: flex;
     align-items: center;
     justify-content: center;
