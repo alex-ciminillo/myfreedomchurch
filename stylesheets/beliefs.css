@@ -108,6 +108,23 @@
     }
 }
 
+.selector-container {
+@media screen and (max-width: 700px) {
+    border: 1px solid black;
+    width: 7rem;
+}
+}
+
+.selector {
+    display: none;
+    @media screen and (max-width: 700px) {
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
 .point-dropdown-container {
     display: flex;
     flex-direction: column;
