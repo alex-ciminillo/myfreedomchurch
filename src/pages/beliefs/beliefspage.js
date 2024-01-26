@@ -60,9 +60,6 @@ function addEventListeners() {
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
 
-        // $(".selector-detail").removeClass("selector-button");
-        // $(this).addClass("selector-button");
-
         $(this).addClass("selector-button").removeClass("selector-button-plain");
         $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
 
@@ -76,11 +73,15 @@ function addEventListeners() {
         displayElement.slideToggle(600);
     });
 
-    $(".selector").on('click', function () {
-        $(".selector-details-container").slideToggle(600);
+    $(".selector, .selector-detail").on('click', function () {
+        let display = $(".selector-details-container").css("display")
+
+        let delay = display !== "none" ? 400 : 0;
+
+        setTimeout(function() {
+            $(".selector-details-container").slideToggle(500);
+        }, delay)
     });
-
-
 
     $(document).ready(function () {
         $('.sliding-underline').on('click', function () {
