@@ -21,7 +21,7 @@
     font-size: 18px;
     width: 100%;
 
-    padding: 5%;
+    /* padding: 5%; */
     background-color: var(--mainColor);
     color: white;
 
@@ -38,7 +38,7 @@
     font-size: 18px;
     width: 100%;
 
-    padding: 5%;
+    /* padding: 5%; */
 
     display: flex;
     align-items: center;
@@ -84,6 +84,7 @@
     @media screen and (max-width: 700px) {
         display: flex;
         flex-direction: column;
+        border: 10px solid black;
     }
 }
 
@@ -110,8 +111,11 @@
 
 .selector-container {
 @media screen and (max-width: 700px) {
-    border: 1px solid black;
-    width: 7rem;
+    border: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+    /* width: 80vw; */
 }
 }
 
@@ -121,6 +125,13 @@
         border: 1px solid black;
         display: flex;
         justify-content: space-around;
+    }
+}
+
+.selector-text {
+    @media screen and (max-width: 700px) {
+        border: 1px solid black;
+        width: 100%;
     }
 }
 
