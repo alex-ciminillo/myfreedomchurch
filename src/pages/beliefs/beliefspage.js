@@ -45,12 +45,22 @@ export default function beliefspage() {
 }
 
 function addEventListeners() {
-    $(".beliefs-key-text").on('click', function () {
+    // $(".beliefs-key-text").on('click', function () {
+    //     const displayId = $(this).data("display");
+    //     hideAllDisplays();
+    //     $("#" + displayId).removeClass("display-none");
+
+    //     $(".beliefs-key-text").removeClass("small-button");
+
+    //     $(this).addClass("small-button");
+    // });
+
+    $(".selector-detail").on('click', function () {
         const displayId = $(this).data("display");
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
 
-        $(".beliefs-key-text").removeClass("small-button");
+        $(".selector-detail").removeClass("small-button");
 
         $(this).addClass("small-button");
     });
@@ -61,6 +71,8 @@ function addEventListeners() {
 
         displayElement.slideToggle(600);
     });
+
+
 
     $(document).ready(function(){
         $('.sliding-underline').on('click',function(){

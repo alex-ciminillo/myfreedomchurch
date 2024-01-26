@@ -102,8 +102,10 @@
     padding: 1rem 2rem 1rem;
 }
 
-.width {
-    width: 7rem;
+.about-selector {
+    @media screen and (min-width: 701px) {
+        width: 7rem;
+    }
 }
 
 .point-dropdown-container {
