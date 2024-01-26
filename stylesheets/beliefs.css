@@ -184,6 +184,13 @@
     }
 }
 
+.selector-details-container {
+    display: contents;
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+}
+
 .point-dropdown-container {
     display: flex;
     flex-direction: column;

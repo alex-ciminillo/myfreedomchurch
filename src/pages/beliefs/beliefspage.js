@@ -82,13 +82,17 @@ function addEventListeners() {
 
     // mobile toggle functionality for the selector
     $(".selector-mobile, .s-d-mobile").on('click', function () {
-        let display = $(".s-d-c-mobile").css("display")
+        let windowWidth = $(window).width();
+        if (windowWidth <= 700) {
 
-        let delay = display !== "none" ? 200 : 0;
+            let display = $(".s-d-c-mobile").css("display")
 
-        setTimeout(function() {
-            $(".s-d-c-mobile").slideToggle(500);
-        }, delay)
+            let delay = display !== "none" ? 200 : 0;
+
+            setTimeout(function () {
+                $(".s-d-c-mobile").slideToggle(500);
+            }, delay)
+        }
     });
 
     $(document).ready(function () {
