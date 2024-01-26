@@ -177,9 +177,7 @@
 
 .selector-text {
     @media screen and (max-width: 700px) {
-        /* width: 100%; */
         display: flex;
-        /* align-self: right; */
         margin-left: 1%;
     }
 }
@@ -188,6 +186,7 @@
     display: contents;
     @media screen and (max-width: 700px) {
         display: none;
+        /* background: blue; */
     }
 }
 

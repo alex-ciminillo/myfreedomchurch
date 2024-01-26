@@ -45,16 +45,6 @@ export default function beliefspage() {
 }
 
 function addEventListeners() {
-    // $(".beliefs-key-text").on('click', function () {
-    //     const displayId = $(this).data("display");
-    //     hideAllDisplays();
-    //     $("#" + displayId).removeClass("display-none");
-
-    //     $(".beliefs-key-text").removeClass("small-button");
-
-    //     $(this).addClass("small-button");
-    // });
-
     $(".selector-detail").on('click', function () {
         const displayId = $(this).data("display");
         hideAllDisplays();
@@ -64,13 +54,6 @@ function addEventListeners() {
         $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
 
         $(".selector-text").text($(this).text());
-
-        // const correspondingId = $(this).data("corresponding");
-        // const correspondingElements = $("[data-corresponding='" + correspondingId + "']");
-
-        // correspondingElements.addClass("selector-button").removeClass("selector-button-plain");
-
-        // $(".selector-text").text($(this).text());
     });
 
     $(".beliefs-point").on('click', function () {
@@ -89,9 +72,9 @@ function addEventListeners() {
 
             let delay = display !== "none" ? 200 : 0;
 
-            setTimeout(function () {
-                $(".s-d-c-mobile").slideToggle(500);
-            }, delay)
+                setTimeout(function () {
+                    $(".s-d-c-mobile").slideToggle(500);
+                }, delay)
         }
     });
 
@@ -100,6 +83,7 @@ function addEventListeners() {
             $(this).toggleClass('clicked');
         })
     })
+
 }
 
 function hideAllDisplays() {
@@ -109,3 +93,41 @@ function hideAllDisplays() {
 $(document).ready(function () {
     addEventListeners();
 })
+
+// $(document).ready(function () {
+//     const screenWidth = window.innerWidth;
+
+//     if (screenWidth >= 700)  {
+//         $(".selector-details-container").removeClass("s-d-c-mobile").css("display", "contents");
+//     }
+// });
+
+// $(document).ready(function () {
+//     const screenWidth = window.innerWidth;
+//     console.log(screenWidth)
+//     if (screenWidth < 700)  {
+//         $(".selector-details-container").addClass("s-d-c-mobile")
+//     }
+// });
+
+$(document).ready(function () {
+    // Function to update based on screen width
+    function updateScreen() {
+        const screenWidth = window.innerWidth;
+        console.log(screenWidth);
+
+        if (screenWidth < 700)  {
+            $(".selector-details-container").addClass("s-d-c-mobile");
+        } else {
+            $(".selector-details-container").removeClass("s-d-c-mobile");
+        }
+    }
+
+    // Initial call to set styles on page load
+    updateScreen();
+
+    // Event listener for screen resize
+    $(window).resize(function () {
+        updateScreen();
+    });
+});
