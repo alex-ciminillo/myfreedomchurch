@@ -60,10 +60,13 @@ function addEventListeners() {
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
 
-        $(".selector-detail").removeClass("small-button");
-        $(".selector-text").text($(this).text())
+        // $(".selector-detail").removeClass("selector-button");
+        // $(this).addClass("selector-button");
 
-        $(this).addClass("small-button");
+        $(this).addClass("selector-button").removeClass("selector-button-plain");
+        $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
+
+        $(".selector-text").text($(this).text());
     });
 
     $(".beliefs-point").on('click', function () {
@@ -75,8 +78,8 @@ function addEventListeners() {
 
 
 
-    $(document).ready(function(){
-        $('.sliding-underline').on('click',function(){
+    $(document).ready(function () {
+        $('.sliding-underline').on('click', function () {
             $(this).toggleClass('clicked');
         })
     })
