@@ -64,6 +64,13 @@ function addEventListeners() {
         $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
 
         $(".selector-text").text($(this).text());
+
+        // const correspondingId = $(this).data("corresponding");
+        // const correspondingElements = $("[data-corresponding='" + correspondingId + "']");
+
+        // correspondingElements.addClass("selector-button").removeClass("selector-button-plain");
+
+        // $(".selector-text").text($(this).text());
     });
 
     $(".beliefs-point").on('click', function () {

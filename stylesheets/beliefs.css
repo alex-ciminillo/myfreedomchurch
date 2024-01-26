@@ -173,6 +173,14 @@
     }
 }
 
+.s-d-c-mobile {
+    display: none;
+
+    @media screen and (max-width: 700px) {
+       display: contents;
+    }
+}
+
 .selector-text {
     @media screen and (max-width: 700px) {
         /* width: 100%; */
