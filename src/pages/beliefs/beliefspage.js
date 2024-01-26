@@ -84,11 +84,11 @@ function addEventListeners() {
     $(".selector-mobile, .s-d-mobile").on('click', function () {
         let display = $(".s-d-c-mobile").css("display")
 
-        let delay = display !== "none" ? 700 : 0;
+        let delay = display !== "none" ? 200 : 0;
 
-        // setTimeout(function() {
+        setTimeout(function() {
             $(".s-d-c-mobile").slideToggle(500);
-        // }, delay)
+        }, delay)
     });
 
     $(document).ready(function () {
