@@ -148,7 +148,7 @@
     @media screen and (max-width: 700px) {
         display: flex;
         flex-direction: column;
-        /* width: 80vw; */
+
     }
 }
 
@@ -158,16 +158,16 @@
     @media screen and (max-width: 700px) {
         border: 2px solid black;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center; */
+        /* align-items: center; */
     }
 }
 
 .selector-text {
     @media screen and (max-width: 700px) {
-        width: 90%;
+        /* width: 100%; */
         display: flex;
-        align-self: right;
+        /* align-self: right; */
         margin-left: 1%;
     }
 }

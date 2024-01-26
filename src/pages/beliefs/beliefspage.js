@@ -76,6 +76,10 @@ function addEventListeners() {
         displayElement.slideToggle(600);
     });
 
+    $(".selector").on('click', function () {
+        $(".selector-details-container").slideToggle(600);
+    });
+
 
 
     $(document).ready(function () {
