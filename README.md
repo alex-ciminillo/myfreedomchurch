@@ -17,3 +17,5 @@ bugs:
 -Above "Coming to Visit?" remove "New Here?"
 
 - on the beliefs page the drop down in mobile view stays open if you quickly change the screen size to desktop view and then go back to mobile view.
+
+- on the beliefs page their is an error with the drop down where if you go from mobile to desktop view it no longer displays.
