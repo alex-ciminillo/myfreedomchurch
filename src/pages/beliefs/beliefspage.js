@@ -73,13 +73,14 @@ function addEventListeners() {
         displayElement.slideToggle(600);
     });
 
-    $(".selector, .selector-detail").on('click', function () {
-        let display = $(".selector-details-container").css("display")
+    // mobile toggle functionality for the selector
+    $(".selector-mobile, .s-d-mobile").on('click', function () {
+        let display = $(".s-d-c-mobile").css("display")
 
         let delay = display !== "none" ? 400 : 0;
 
         setTimeout(function() {
-            $(".selector-details-container").slideToggle(500);
+            $(".s-d-c-mobile").slideToggle(500);
         }, delay)
     });
 
