@@ -152,10 +152,8 @@
     width: 8rem;
 
     @media screen and (max-width: 768px) {
-        /* display: none; */
         display: flex;
         flex-direction: column;
-        border: 1px solid black;
         width: auto;
     }
 }
@@ -178,9 +176,12 @@
 
 .selector-details-container {
     display: content;
-    @media screen and (max-width: 769px) {
+    @media screen and (max-width: 768px) {
         display: none;
     }
+    /* @media screen and (min-width: 769px) {
+        display: content !important;
+    } */
 }
 
 

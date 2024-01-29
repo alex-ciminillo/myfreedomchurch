@@ -15,7 +15,3 @@ bugs:
     - Service font looks like the other links.
 
 -Above "Coming to Visit?" remove "New Here?"
-
-- on the beliefs page the drop down in mobile view stays open if you quickly change the screen size to desktop view and then go back to mobile view.
-
-- on the beliefs page their is an error with the drop down where if you go from mobile to desktop view it no longer displays.  - this issue is larger than I thought, seems to have a bigger logic error in the code 1/29

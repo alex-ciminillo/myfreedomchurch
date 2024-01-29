@@ -68,7 +68,7 @@ function addEventListeners() {
         let windowWidth = $(window).width();
         if (windowWidth <= 768) {
 
-            let display = $(".s-d-c-mobile").css("display")
+            let display = $(".s-d-c-mobile").css("none")
 
             let delay = display !== "none" ? 200 : 0;
 
@@ -100,6 +100,8 @@ $(document).ready(function () {
         const screenWidth = window.innerWidth;
 
         console.log(screenWidth)
+
+        if (screenWidth >= 769) $(".s-d-c-mobile").removeAttr("style");
     }
 
     // Initial call to set styles on page load
