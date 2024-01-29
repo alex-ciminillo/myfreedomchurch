@@ -177,10 +177,13 @@
 }
 
 .selector-details-container {
-    display: contents;
+    /* display: contents;
     @media screen and (max-width: 769px) {
-        display: none;
+        /* display: none; */
         /* background: blue; */
+    /* } */
+    @media screen and (min-width: 768px) {
+        display: block;
     }
 }
 

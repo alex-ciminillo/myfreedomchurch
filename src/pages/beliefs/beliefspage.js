@@ -66,15 +66,15 @@ function addEventListeners() {
     // mobile toggle functionality for the selector
     $(".selector-mobile, .s-d-mobile").on('click', function () {
         let windowWidth = $(window).width();
-        if (windowWidth <= 700) {
+        if (windowWidth <= 768) {
 
             let display = $(".s-d-c-mobile").css("display")
 
             let delay = display !== "none" ? 200 : 0;
 
-                setTimeout(function () {
-                    $(".s-d-c-mobile").slideToggle(500);
-                }, delay)
+            setTimeout(function () {
+                $(".s-d-c-mobile").slideToggle(500);
+            }, delay)
         }
     });
 
@@ -98,13 +98,8 @@ $(document).ready(function () {
     // Function to update based on screen width
     function updateScreen() {
         const screenWidth = window.innerWidth;
-        console.log(screenWidth);
 
-        if (screenWidth < 700)  {
-            $(".selector-details-container").addClass("s-d-c-mobile");
-        } else {
-            $(".selector-details-container").removeClass("s-d-c-mobile");
-        }
+        console.log(screenWidth)
     }
 
     // Initial call to set styles on page load
