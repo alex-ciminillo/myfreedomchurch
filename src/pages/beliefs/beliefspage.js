@@ -94,22 +94,6 @@ $(document).ready(function () {
     addEventListeners();
 })
 
-// $(document).ready(function () {
-//     const screenWidth = window.innerWidth;
-
-//     if (screenWidth >= 700)  {
-//         $(".selector-details-container").removeClass("s-d-c-mobile").css("display", "contents");
-//     }
-// });
-
-// $(document).ready(function () {
-//     const screenWidth = window.innerWidth;
-//     console.log(screenWidth)
-//     if (screenWidth < 700)  {
-//         $(".selector-details-container").addClass("s-d-c-mobile")
-//     }
-// });
-
 $(document).ready(function () {
     // Function to update based on screen width
     function updateScreen() {
