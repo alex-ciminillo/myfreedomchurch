@@ -177,15 +177,13 @@
 }
 
 .selector-details-container {
-    /* display: contents;
+    display: content;
     @media screen and (max-width: 769px) {
-        /* display: none; */
-        /* background: blue; */
-    /* } */
-    @media screen and (min-width: 768px) {
-        display: block;
+        display: none;
     }
 }
+
+
 
 .point-dropdown-container {
     display: flex;
