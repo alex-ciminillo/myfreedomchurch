@@ -85,22 +85,32 @@
 /* Button Slide */
 .selector-button-plain::before {
     content: "";
-    /* background: linear-gradient(to right, var(--mainColor) 0%, transparent 100%); */
-    background: var(--mainColor);
+    background-color: var(--mainColor);
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -5%;
     width: 0;
     z-index: 2;
-    transform-origin: left;
+    overflow: hidden;
     transition: width 1s ease-in-out;
-    transform: skew(30deg); /* Adjust the angle as needed */
+    transform: skew(30deg)
 }
 
 .selector-button-plain:hover::before,
 .selector-button-plain:focus::before {
-    width: 100%; /* Updated width to cover the entire button */
+    width: 110%;
+    transition: width 1s ease-in-out;
+}
+
+.selector-button-plain {
+    position: relative; /* Ensure the ::before pseudo-element is positioned relative to this */
+    z-index: 1;
+}
+
+.selector-button-plain:hover,
+.selector-button-plain:focus {
+    color: white;
 }
 
 
