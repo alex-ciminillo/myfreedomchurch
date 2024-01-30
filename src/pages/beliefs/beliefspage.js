@@ -99,8 +99,6 @@ $(document).ready(function () {
     function updateScreen() {
         const screenWidth = window.innerWidth;
 
-        console.log(screenWidth)
-
         if (screenWidth >= 769) $(".s-d-c-mobile").removeAttr("style");
     }
 
