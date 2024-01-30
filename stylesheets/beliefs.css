@@ -89,17 +89,17 @@
 
 .selector-button-plain::before {
     content: "";
-    background-color: var(--mainColor);
+    /* background: linear-gradient(to right, var(--mainColor) 0%, transparent 100%); */
+    background: var(--mainColor);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 0; /* Updated width to start at 0 */
+    width: 0;
     z-index: 2;
-
     transform-origin: left;
-    transition: width 1s ease-in-out; /* Updated transition property */
-
+    transition: width 1s ease-in-out;
+    transform: skew(30deg); /* Adjust the angle as needed */
 }
 
 .selector-button-plain:hover::before,
