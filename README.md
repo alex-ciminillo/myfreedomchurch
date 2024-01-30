@@ -15,3 +15,5 @@ bugs:
     - Service font looks like the other links.
 
 -Above "Coming to Visit?" remove "New Here?"
+
+- beliefs page, selection buttons. On hover is working, need to change the on hover to work for the click instead.
