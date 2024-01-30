@@ -185,6 +185,10 @@
     padding: 1rem 2rem 1rem;
 }
 
+.beliefs-point:hover {
+    font-weight: 500;
+}
+
 .about-selector {
     @media screen and (min-width: 769px) {
         width: 7rem;
@@ -228,8 +232,6 @@
         display: content !important;
     } */
 }
-
-
 
 .point-dropdown-container {
     display: flex;
