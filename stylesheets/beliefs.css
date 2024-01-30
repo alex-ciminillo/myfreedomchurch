@@ -71,7 +71,9 @@
     display: flex;
     border-radius: 10px;
 
+    position: relative;
     z-index: 1;
+    overflow: hidden;
 
     @media screen and (min-width: 769px) {
         font-size: 20px;
@@ -81,12 +83,6 @@
 }
 
 /* Button Slide */
-.selector-button-plain {
-    position: relative;
-    z-index: 1;
-    overflow: hidden; /* Added this line to ensure the overflow is hidden */
-}
-
 .selector-button-plain::before {
     content: "";
     /* background: linear-gradient(to right, var(--mainColor) 0%, transparent 100%); */
