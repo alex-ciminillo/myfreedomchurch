@@ -16,7 +16,7 @@
     line-height: normal;
 }
 
-.small-button {
+/* .small-button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     width: 100%;
@@ -32,9 +32,9 @@
     text-align: center;
 
     border-radius: 100px;
-}
+} */
 
-.small-button-plain {
+/* .small-button-plain {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     width: 100%;
@@ -47,7 +47,7 @@
     text-align: center;
 
     border-radius: 10px;
-}
+} */
 
 .large-button {
     color: var(--mainColor);
@@ -71,12 +71,50 @@
     display: flex;
     border-radius: 10px;
 
+    z-index: 1;
+
     @media screen and (min-width: 769px) {
         font-size: 20px;
         border-radius: 15px;
         padding: 10%;
-     }
+    }
 }
+
+/* Button Slide */
+/* .selector-button-plain::before {
+    content: "";
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    /* z-index: -1; */
+
+    /* transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease-in-out; */
+/* }  */
+
+/* .selector-button-plain:hover::before,
+.selector-button-plain:focus::before {
+  transform: scaleX(1);
+  transition: transform 1s ease-in-out;
+} */
+
+/* .selector-button-plain {
+    z-index: 1;
+  }
+
+  .selector-button-plain:hover,
+  .selector-button-plain:focus {
+    color: white;
+  } */
+
+
+
 
 .selector-button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -92,9 +130,9 @@
     border-radius: 10px;
 
     @media screen and (min-width: 769px) {
-       font-size: 20px;
-       border-radius: 15px;
-       padding: 10%;
+        font-size: 20px;
+        border-radius: 15px;
+        padding: 10%;
     }
 }
 
@@ -176,9 +214,11 @@
 
 .selector-details-container {
     display: content;
+
     @media screen and (max-width: 768px) {
         display: none;
     }
+
     /* @media screen and (min-width: 769px) {
         display: content !important;
     } */
@@ -195,7 +235,7 @@
     margin-left: calc(2rem + 10px);
 }
 
-
+/* Underline Slide */
 /* LEFT TO RIGHT */
 .sliding-underline {
     display: inline-block;
