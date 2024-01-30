@@ -61,6 +61,7 @@ function addEventListeners() {
         const displayElement = $("#" + displayId);
 
         displayElement.slideToggle(600);
+        $(this).find('.arrow-size').toggleClass('no-transform');
     });
 
     // mobile toggle functionality for the selector
