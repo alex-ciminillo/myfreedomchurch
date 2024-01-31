@@ -93,14 +93,14 @@
     width: 0;
     z-index: 2;
     overflow: hidden;
-    transition: width 1s ease-in-out;
+    transition: width 0.5s ease-in-out;
     transform: skew(30deg)
 }
 
 .selector-button-plain:hover::before,
 .selector-button-plain:focus::before {
     width: 110%;
-    transition: width 1s ease-in-out;
+    transition: width 0.5s ease-in-out;
 }
 
 .selector-button-plain {

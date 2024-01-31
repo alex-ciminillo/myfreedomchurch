@@ -73,6 +73,7 @@ function addEventListeners() {
 
             let delay = display !== "none" ? 200 : 0;
 
+            // $(".s-d-c-mobile").slideToggle(200);
             setTimeout(function () {
                 $(".s-d-c-mobile").slideToggle(500);
             }, delay)
