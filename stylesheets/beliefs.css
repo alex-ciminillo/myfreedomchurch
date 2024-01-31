@@ -317,14 +317,16 @@
     padding: 1% 0% 1% 5%;
     background: linear-gradient(to right, var(--mainColor) 0%, var(--mainColor) 50%, salmon 50%);
     background-size: 200% 100%;
-    /* background-position: 100% 0; */
+    background-position: 100% 0;
     transition: background-position 1s ease;
     color: white;
     /* display: flex; */
     border-radius: 10px;
 }
 
-.change-color {
-    /* background-position: 0 100%; */
-    background-position: 50% 0;
+.change-color-to {
+    background-position: 0 100%;
+}
+.change-color-from {
+    background-position: 100% 0;
 }
