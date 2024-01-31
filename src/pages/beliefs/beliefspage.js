@@ -53,6 +53,9 @@ function addEventListeners() {
         $(this).addClass("selector-button").removeClass("selector-button-plain");
         $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
 
+        $(this).addClass("change-color");
+        $(".selector-detail").not(this).removeClass("change-color")
+
         $(".selector-text").text($(this).text());
     });
 
