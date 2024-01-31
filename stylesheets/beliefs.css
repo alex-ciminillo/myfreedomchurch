@@ -315,15 +315,16 @@
     width: 100%;
     box-sizing: border-box;
     padding: 1% 0% 1% 5%;
-    background: linear-gradient(to left, salmon 50%, var(--mainColor)) right;
-    background-position: left;
-    background-size: 500%;
-    transition: background 1s ease;
+    background: linear-gradient(to right, var(--mainColor) 0%, var(--mainColor) 50%, salmon 50%);
+    background-size: 200% 100%;
+    /* background-position: 100% 0; */
+    transition: background-position 1s ease;
     color: white;
-    display: flex;
+    /* display: flex; */
     border-radius: 10px;
 }
 
 .change-color {
-    background-position: right;
+    /* background-position: 0 100%; */
+    background-position: 50% 0;
 }
