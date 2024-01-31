@@ -386,12 +386,18 @@
 
 .moving-background {
     position: absolute;
-    z-index: 5;
-    width: 110%;
+    z-index: 2;
+    width: 115%;
     height: 110%;
 
     top: -10%;
     left: -10%;
 
     background-color: var(--mainColor);
+    transform: skewX(45deg);
+}
+
+.button-text {
+    position: relative;
+    z-index: 3;
 }
