@@ -83,7 +83,7 @@
 }
 
 /* Button Slide */
-.selector-button-plain::before {
+/* .selector-button-plain::before {
     content: "";
     background-color: var(--mainColor);
     position: absolute;
@@ -104,19 +104,19 @@
 }
 
 .selector-button-plain {
-    position: relative; /* Ensure the ::before pseudo-element is positioned relative to this */
+    position: relative;
     z-index: 1;
 }
 
 .selector-button-plain:hover,
 .selector-button-plain:focus {
     color: white;
-}
+} */
 
 
 
 
-.selector-button {
+/* .selector-button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     width: 100%;
@@ -125,6 +125,7 @@
     padding: 1% 0% 1% 5%;
 
     background-color: var(--mainColor);
+
     color: white;
     display: flex;
     border-radius: 10px;
@@ -134,7 +135,7 @@
         border-radius: 15px;
         padding: 10%;
     }
-}
+} */
 
 .arrow-size {
     font-size: 25px;
@@ -262,4 +263,26 @@
 .sliding-underline.clicked:after {
     width: 100%;
     background: var(--mainColor);
+}
+
+
+.selector-button::before {
+    position: absolute;
+    content: 'test';
+    width: 100%;
+    border: 1px solid black;
+    background: linear-gradient(to right,transparent 50%, blue 0%);
+    transform: skew(30deg);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    animation: slideBackground 3s ease forwards;
+}
+
+@keyframes slideBackground {
+    to {
+        background-position: -100% 0;
+    }
+    from {
+        background-position: 100% 0;
+    }
 }
