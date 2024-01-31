@@ -395,9 +395,18 @@
 
     background-color: var(--mainColor);
     transform: skewX(45deg);
+    transition: transform 0.5s ease;
 }
 
 .button-text {
     position: relative;
     z-index: 3;
+}
+
+.move-right {
+    transform: skewX(45deg) translateX(100%);
+}
+
+.move-left {
+    transform: skewX(45deg) translateX(-100%);
 }
