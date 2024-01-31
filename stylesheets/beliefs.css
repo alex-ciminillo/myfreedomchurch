@@ -309,13 +309,14 @@
     }
 } */
 
-/* .selector-button {
+.selector-button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     width: 100%;
     box-sizing: border-box;
     padding: 1% 0% 1% 5%;
-    background: linear-gradient(to right, var(--mainColor) 0%, var(--mainColor) 50%, salmon 50%);
+    background: linear-gradient(to right, var(--mainColor) 50%, transparent 50%);
+    transform: skewX(45deg);
     background-size: 200% 100%;
     background-position: 100% 0;
     transition: background-position 1s ease;
@@ -328,9 +329,9 @@
 }
 .change-color-from {
     background-position: 100% 0;
-} */
+}
 
-.selector-button {
+/* .selector-button {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     width: 100%;
@@ -351,13 +352,16 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: linear-gradient(to right, var(--mainColor) 0%, var(--mainColor) 50%, salmon 50%, salmon 100%);
+    background: linear-gradient(to right, var(--mainColor) 0%, var(--mainColor) 50%, salmon 50%);
     background-size: 200% 100%;
     background-position: 100% 0;
     transform: skewX(-30deg);
     transition: background-position 1s ease;
 }
 
-.selector-button.selected::before {
+.change-color-to {
     background-position: 0 100%;
 }
+.change-color-from {
+    background-position: 100% 0;
+} */

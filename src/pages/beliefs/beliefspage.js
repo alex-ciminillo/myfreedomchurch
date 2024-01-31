@@ -59,6 +59,18 @@ function addEventListeners() {
         $(".selector-text").text($(this).text());
     });
 
+    // $(".selector-detail").on('click', function () {
+    //     const displayId = $(this).data("display");
+    //     hideAllDisplays();
+    //     $("#" + displayId).removeClass("display-none");
+
+    //     $(".selector-detail").removeClass("selector-button active").addClass("selector-button-plain");
+    //     $(this).addClass("selector-button active").removeClass("selector-button-plain");
+
+    //     $(".selector-button.active").css('background-position', '0 100%');
+    //     $(".selector-text").text($(this).text());
+    // });
+
     $(".beliefs-point").on('click', function () {
         const displayId = $(this).data("display");
         const displayElement = $("#" + displayId);
