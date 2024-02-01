@@ -45,36 +45,34 @@ export default function beliefspage() {
 }
 
 function addEventListeners() {
-    $(".selector-detail").on('click', function () {
-        const displayId = $(this).data("display");
-        hideAllDisplays();
-        $("#" + displayId).removeClass("display-none");
+    // $(".selector-detail").on('click', function () {
+    //     const displayId = $(this).data("display");
+    //     hideAllDisplays();
+    //     $("#" + displayId).removeClass("display-none");
 
-        $(this).addClass("selector-button").removeClass("selector-button-plain");
-        $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
+    //     $(this).addClass("selector-button").removeClass("selector-button-plain");
+    //     $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
 
-        $(this).addClass("change-color-to").removeClass("change-color-from");
-        $(".selector-detail").not(this).removeClass("change-color-to").addClass("change-color-from");
+    //     $(this).addClass("change-color-to").removeClass("change-color-from");
+    //     $(".selector-detail").not(this).removeClass("change-color-to").addClass("change-color-from");
 
-        $(".selector-text").text($(this).text());
-    });
+    //     $(".selector-text").text($(this).text());
+    // });
 
     $(".button-container").on('click', function () {
         const displayId = $(this).data("display");
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
 
-        // $(this).addClass("selector-button").removeClass("selector-button-plain");
-        // $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
-
-        // $(this).addClass("change-color-to").removeClass("change-color-from");
-        // $(".selector-detail").not(this).removeClass("change-color-to").addClass("change-color-from");
-
-        // $(".selector-text").text($(this).text());
-
         let status = $(this).find(".moving-background").hasClass("move-right");
-        if (!status) $(this).find(".moving-background").removeClass("move-left").addClass("move-right");
-        else $(this).find(".moving-background").removeClass("move-right").addClass("move-left");
+        if (!status) {
+            $(this).find(".moving-background").removeClass("move-left").addClass("move-right");
+            $(this).addClass("button-text-white")
+        }
+        else {
+            $(this).find(".moving-background").removeClass("move-right").addClass("move-left");
+            $(this).removeClass("button-text-white")
+        }
     });
 
     $(".beliefs-point").on('click', function () {
