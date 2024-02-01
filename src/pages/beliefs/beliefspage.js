@@ -59,6 +59,43 @@ function addEventListeners() {
         $(".selector-text").text($(this).text());
     });
 
+    $(".button-container").on('click', function () {
+        // const displayId = $(this).data("display");
+        // hideAllDisplays();
+        // $("#" + displayId).removeClass("display-none");
+
+        // $(this).addClass("selector-button").removeClass("selector-button-plain");
+        // $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
+
+        // $(this).addClass("change-color-to").removeClass("change-color-from");
+        // $(".selector-detail").not(this).removeClass("change-color-to").addClass("change-color-from");
+
+        // $(".selector-text").text($(this).text());
+
+        let status = $(this).find(".moving-background").hasClass("move-right");
+
+        console.log("status: ", status)
+        if (!status) {
+            $(this).find(".moving-background").removeClass("move-left").addClass("move-right");
+            // status = !status;
+        }
+        else {
+            $(this).find(".moving-background").removeClass("move-right").addClass("move-left");
+            // status = !status;
+        }
+
+
+
+        // $(this).find(".moving-background").addClass("move-right").removeClass("move-left");
+
+
+        // $(this).find(".moving-background").not(this).removeClass("move-right").addClass("move-left");
+
+        // $(".moving-background").addClass("move-right").removeClass("move-left");
+        // $(".moving-background").not(this).removeClass("move-right").addClass("move-left");
+
+    });
+
     // $(".selector-detail").on('click', function () {
     //     const displayId = $(this).data("display");
     //     hideAllDisplays();
