@@ -60,9 +60,9 @@ function addEventListeners() {
     });
 
     $(".button-container").on('click', function () {
-        // const displayId = $(this).data("display");
-        // hideAllDisplays();
-        // $("#" + displayId).removeClass("display-none");
+        const displayId = $(this).data("display");
+        hideAllDisplays();
+        $("#" + displayId).removeClass("display-none");
 
         // $(this).addClass("selector-button").removeClass("selector-button-plain");
         // $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
@@ -73,40 +73,9 @@ function addEventListeners() {
         // $(".selector-text").text($(this).text());
 
         let status = $(this).find(".moving-background").hasClass("move-right");
-
-        console.log("status: ", status)
-        if (!status) {
-            $(this).find(".moving-background").removeClass("move-left").addClass("move-right");
-            // status = !status;
-        }
-        else {
-            $(this).find(".moving-background").removeClass("move-right").addClass("move-left");
-            // status = !status;
-        }
-
-
-
-        // $(this).find(".moving-background").addClass("move-right").removeClass("move-left");
-
-
-        // $(this).find(".moving-background").not(this).removeClass("move-right").addClass("move-left");
-
-        // $(".moving-background").addClass("move-right").removeClass("move-left");
-        // $(".moving-background").not(this).removeClass("move-right").addClass("move-left");
-
+        if (!status) $(this).find(".moving-background").removeClass("move-left").addClass("move-right");
+        else $(this).find(".moving-background").removeClass("move-right").addClass("move-left");
     });
-
-    // $(".selector-detail").on('click', function () {
-    //     const displayId = $(this).data("display");
-    //     hideAllDisplays();
-    //     $("#" + displayId).removeClass("display-none");
-
-    //     $(".selector-detail").removeClass("selector-button active").addClass("selector-button-plain");
-    //     $(this).addClass("selector-button active").removeClass("selector-button-plain");
-
-    //     $(".selector-button.active").css('background-position', '0 100%');
-    //     $(".selector-text").text($(this).text());
-    // });
 
     $(".beliefs-point").on('click', function () {
         const displayId = $(this).data("display");
