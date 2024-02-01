@@ -45,18 +45,21 @@ export default function beliefspage() {
 }
 
 function addEventListeners() {
-    // $(".selector-detail").on('click', function () {
+    // $(".button-container").on('click', function () {
     //     const displayId = $(this).data("display");
     //     hideAllDisplays();
     //     $("#" + displayId).removeClass("display-none");
 
-    //     $(this).addClass("selector-button").removeClass("selector-button-plain");
-    //     $(".selector-detail").not(this).removeClass("selector-button").addClass("selector-button-plain");
+    //     let movingBackground = $(this).find(".moving-background");
 
-    //     $(this).addClass("change-color-to").removeClass("change-color-from");
-    //     $(".selector-detail").not(this).removeClass("change-color-to").addClass("change-color-from");
 
-    //     $(".selector-text").text($(this).text());
+    //     if (!movingBackground.hasClass("move-right")) {
+    //         $(".moving-background").removeClass("move-right").addClass("move-left");
+    //         movingBackground.removeClass("move-left").addClass("move-right");
+    //         $(this).addClass("button-text-white")
+    //        $(".button-container").removeClass("button-text-white")
+    //         $(this).removeClass("button-text-white")
+    //     }
     // });
 
     $(".button-container").on('click', function () {
@@ -64,17 +67,14 @@ function addEventListeners() {
         hideAllDisplays();
         $("#" + displayId).removeClass("display-none");
 
-        let movingBackground = $(this).find(".moving-background");
+        $(".button-container").not(this).find(".moving-background").removeClass("move-right").addClass("move-left");
+        $(this).find(".moving-background").removeClass("move-left").addClass("move-right");
 
-
-        if (!movingBackground.hasClass("move-right")) {
-            $(".moving-background").removeClass("move-right").addClass("move-left");
-            movingBackground.removeClass("move-left").addClass("move-right");
-            $(this).addClass("button-text-white")
-           $(".button-container").removeClass("button-text-white")
-            $(this).removeClass("button-text-white")
-        }
+        $(".button-container").removeClass("button-text-white");
+        $(this).addClass("button-text-white");
     });
+
+
 
     $(".beliefs-point").on('click', function () {
         const displayId = $(this).data("display");
