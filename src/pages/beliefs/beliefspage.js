@@ -66,13 +66,12 @@ function addEventListeners() {
 
         let movingBackground = $(this).find(".moving-background");
 
-        let status = $(this).find(".moving-background").hasClass("move-right");
-        if (!status) {
+
+        if (!movingBackground.hasClass("move-right")) {
+            $(".moving-background").removeClass("move-right").addClass("move-left");
             movingBackground.removeClass("move-left").addClass("move-right");
             $(this).addClass("button-text-white")
-        }
-        else {
-           movingBackground.removeClass("move-right").addClass("move-left");
+           $(".button-container").removeClass("button-text-white")
             $(this).removeClass("button-text-white")
         }
     });
