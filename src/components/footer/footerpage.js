@@ -38,19 +38,15 @@ function addEventListeners() {
 
 
   $(".footer-log-in").on('click', function () {
-    $("#homepage-menu-cover").removeClass("opacity-one")
+    $("#homepage-menu-cover").css("top", `${window.scrollY}px`);
+    $("#homepage-navbar").addClass("position-static")
+    $("#homepage-navbar").addClass("display-none")
+    $("#homepage-menu-cover").removeClass("display-none")
     setTimeout(() => {
-      $("#homepage-menu-cover").addClass("display-none")
-      $("#homepage-navbar").removeClass("position-static")
-      $("#homepage-navbar").removeClass("display-none")
-      $("body").removeClass("overflow-hidden")
-    }, 400)
-
-    $("body").load(`${HomePage}`, function () {
-      HomePageJS()
-    });
+      $("#homepage-menu-cover").addClass("opacity-one")
+    }, 1)
+    $("body").addClass("overflow-hidden")
   })
-
 
 
 
