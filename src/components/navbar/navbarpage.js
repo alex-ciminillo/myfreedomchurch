@@ -73,7 +73,7 @@ function updateChurchInfo() {
       })
 
 
-      //give page 
+      //give page
       $("#giving-intro-info-container-give-online").off().on('click', function () {
         $("#under-construction-body").removeClass("display-none")
     $("#under-construction-body").css("top", `${window.scrollY}px`);
@@ -130,14 +130,14 @@ function updateChurchInfo() {
         window.open('https://www.facebook.com/groups/642064716223770', '_blank');
       })
 
-      //give page 
+      //give page
       $("#giving-intro-info-container-give-online").off().on('click', function () {
         window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KXYPYYU2NLTBU&source=url', '_blank');
       })
 
       $("#giving-ways-list-give-now").off().on('click', function () {
         window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KXYPYYU2NLTBU&source=url', '_blank');
-      
+
       })
 
       //give page address
@@ -192,7 +192,7 @@ function addEventListeners() {
       $("#homepage-navbar-church-toggle").removeClass("display-none")
     })
   }
-  
+
 
   $("#homepage-navbar-church-toggle-lima").on('click', function (e) {
     e.stopPropagation();
@@ -202,7 +202,7 @@ function addEventListeners() {
     } else {
       $("#homepage-navbar-church-button-text").html("Freedom - Lima")
     }
-    
+
     Cookies.set("church", "lima", { expires: 365 })
     updateChurchInfo()
     $("#homepage-navbar-church-toggle").addClass("display-none")
@@ -216,10 +216,10 @@ function addEventListeners() {
     } else {
       $("#homepage-navbar-church-button-text").html("Freedom - Ottawa")
     }
-    
+
     Cookies.set("church", "ottawa", { expires: 365 })
     updateChurchInfo()
-    
+
   })
 
 

@@ -4,16 +4,17 @@ import Cookies from 'js-cookie';
 import GivePage from './../../pages/giving/givingpage.html'
 import GivePageJS from './../../pages/giving/givingpage.js'
 
-
+import HomePage from './../../pages/homepage/homepage.html'
+import HomePageJS from '../../pages/homepage/homepage.js'
 
 export default function footerpage() {
 
   addEventListeners()
-  
+
   // document.getElementById("contact-us-form").scrollIntoView();
 
   if (!Cookies.get("church")) {
-    
+
   }
 
 
@@ -25,25 +26,40 @@ export default function footerpage() {
 function addEventListeners() {
 
   //footer icons
-  $("#homepage-footer-email-icon").on('click', function(){
+  $("#homepage-footer-email-icon").on('click', function () {
     document.getElementById("contact-us-form").scrollIntoView({ behavior: "smooth" });
   })
 
-  $("#homepage-footer-question-icon").on('click', function(){
+  $("#homepage-footer-question-icon").on('click', function () {
     document.getElementById("contact-us-form").scrollIntoView({ behavior: "smooth" });
   })
 
   $("#homepage-footer-phone-icon").on()
 
+
+  $(".footer-log-in").on('click', function () {
+    $("#homepage-menu-cover").removeClass("opacity-one")
+    setTimeout(() => {
+      $("#homepage-menu-cover").addClass("display-none")
+      $("#homepage-navbar").removeClass("position-static")
+      $("#homepage-navbar").removeClass("display-none")
+      $("body").removeClass("overflow-hidden")
+    }, 400)
+
+    $("body").load(`${HomePage}`, function () {
+      HomePageJS()
+    });
+  })
+
+
+
+
+
   //footer give
-  $("#homepage-footer-bottom-text-give-information").on('click', function(){
-    $( "body" ).load( `${GivePage}`, function() {
-        GivePageJS()
-      });
+  $("#homepage-footer-bottom-text-give-information").on('click', function () {
+    $("body").load(`${GivePage}`, function () {
+      GivePageJS()
+    });
   })
 
 }
-
-
-
-
