@@ -38,12 +38,12 @@ function addEventListeners() {
 
 
   $(".footer-log-in").on('click', function () {
-    $("#homepage-menu-cover").css("top", `${window.scrollY}px`);
+    $("#homepage-menu-cover-signup").css("top", `${window.scrollY}px`);
     $("#homepage-navbar").addClass("position-static")
     $("#homepage-navbar").addClass("display-none")
-    $("#homepage-menu-cover").removeClass("display-none")
+    $("#homepage-menu-cover-signup").removeClass("display-none")
     setTimeout(() => {
-      $("#homepage-menu-cover").addClass("opacity-one")
+      $("#homepage-menu-cover-signup").addClass("opacity-one")
     }, 1)
     $("body").addClass("overflow-hidden")
   })
