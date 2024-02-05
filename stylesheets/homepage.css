@@ -572,6 +572,10 @@ hr {
 }
 
 .homepage-menu-cover {
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+
     width: 100vw;
     height: 100%;
     position: absolute;
