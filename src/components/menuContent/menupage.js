@@ -98,21 +98,35 @@ function addEventListeners() {
         }, 400)
     })
 
-    $("#menu-beliefs").on('click', function(){
-        console.log("beliefs")
-        $("#homepage-menu-cover").removeClass("opacity-one")
-        setTimeout(()=>{
-            $("#homepage-menu-cover").addClass("display-none")
-            $("#homepage-navbar").removeClass("position-static")
-            $("#homepage-navbar").removeClass("display-none")
-            $("body").removeClass("overflow-hidden")
+    $("#menu-beliefs").on('click', function () {
+        // console.log("beliefs")
+        $("#homepage-menu-cover").removeClass("opacity-one");
+        // $("#menu-beliefs").addClass("display-none");
 
-            $( "body" ).load( `${BeliefsPage}`, function() {
+        setTimeout(() => {
+            $("#homepage-menu-cover").addClass("display-none");
+            $("#homepage-navbar").removeClass("position-static");
+            $("#homepage-navbar").removeClass("display-none");
+            $("body").removeClass("overflow-hidden");
+
+
+            $("body").load(`${BeliefsPage}`, function () {
                 BeliefsPageJS()
-              });
+            });
+            // Clear previous content
+            $("#menu-content-container").html("");
 
-        }, 400)
-    })
+            // Load menuContent.html into menu-content-container
+            $("#menu-content-container").load('../menuContent/menuContent.html', function () {
+                // Load menupage.js from the menuContent folder
+                $.getScript('../menuContent/menupage.js', function () {
+                    // Optionally, call a function if there is JavaScript specific to menuContent.html
+                    // For example, assuming there is a function called menuContentJS
+                    menuContentJS();
+                });
+            });
+        }, 400);
+    });
 
     $("#homepage-menu-cover-body-right-our-location").on('click', function () {
         $("#homepage-menu-cover").removeClass("opacity-one")

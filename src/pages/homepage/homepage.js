@@ -9,7 +9,7 @@ import FooterPageHtml from './../../components/footer/footerpage.html'
 import FooterPageJS from './../../components/footer/footerpage.js'
 
 import MenuPageHtml from './../../components/menu/menupage.html'
-import MenuPageJS from './../../components/menu/menupage.js'
+import MenuPageJS from '../../components/menuContent/menupage.js'
 
 import WelcomeFormPageHtml from './../../components/welcomeform/welcomeformpage.html'
 import WelcomeFormPageJS from './../../components/welcomeform/welcomeformpage.js'

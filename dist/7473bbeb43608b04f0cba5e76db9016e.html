@@ -9,17 +9,24 @@
             <i class="fa-solid fa-x"></i>
         </div>
     </div>
-    <div id="menu-content-container"></div>
+    <!-- <div id="menu-content-container"></div>
     <script>
         // Fetch and inject content
+        console.log('fetch')
         fetch('../src/components/menuContent/menuContent.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('menu-content-container').innerHTML = html;
-            })
-            .catch(error => console.error('Error fetching menuContent.html:', error));
-    </script>
-    <!-- <div id="homepage-menu-cover-body" class="homepage-menu-cover-body display-none">
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('menu-content-container').innerHTML = html;
+
+            // After injecting HTML, execute associated JavaScript
+            const scriptElement = document.createElement("script");
+            scriptElement.type = "module";  // Set the type to "module"
+            scriptElement.src = '../src/components/menuContent/menupage.js';
+            document.head.appendChild(scriptElement);
+        })
+        .catch(error => console.error('Error fetching menuContent.html:', error));
+    </script> -->
+    <div id="homepage-menu-cover-body" class="homepage-menu-cover-body display-none">
         <div class="homepage-menu-cover-body-left">
             <div class="homepage-menu-cover-body-left-top">
                 <div>
@@ -74,5 +81,5 @@
                 OUR LOCATION
             </div>
         </div>
-    </div> -->
+    </div>
 </div>
