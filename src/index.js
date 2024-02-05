@@ -19,13 +19,13 @@ import $ from 'jquery'
 const start = () => {
 
   $( "body" ).load(
-    // `${HomePage}`,
+    `${HomePage}`,
     // `${GivePage}`,
-    `${BeliefsPage}`,
+    // `${BeliefsPage}`,
     function() {
-    // HomePageJS()
+    HomePageJS()
     // GivePageJS()
-    BeliefsPageJS()
+    // BeliefsPageJS()
   });
 
 
