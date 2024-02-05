@@ -172,6 +172,9 @@ function addEventListeners() {
     $("#homepage-navbar").addClass("position-static")
     $("#homepage-navbar").addClass("display-none")
     $("#homepage-menu-cover").removeClass("display-none")
+
+    $("#homepage-menu-cover-body").removeClass("display-none")
+
     setTimeout(() => {
       $("#homepage-menu-cover").addClass("opacity-one")
     }, 1)
