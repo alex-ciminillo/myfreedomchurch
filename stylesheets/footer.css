@@ -5,18 +5,30 @@
     justify-content: center;
 }
 
-.sign-up {
+.login-left {
     border: 1px solid black;
 
     width: 20vw;
     height: 40vh;
     margin-right: 1rem;
+
+    border-top-left-radius: 15px;
 }
 
-.sign-in {
+.login-right {
     border: 1px solid black;
 
     width: 20vw;
     height: 40vh;
     margin-left: 1rem;
+
+    border-top-right-radius: 15px;
+}
+
+.login-header-left {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+
+    height: 10%;
 }
