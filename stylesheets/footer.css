@@ -1,0 +1,22 @@
+.sign-in-container {
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up {
+    border: 1px solid black;
+
+    width: 20vw;
+    height: 40vh;
+    margin-right: 1rem;
+}
+
+.sign-in {
+    border: 1px solid black;
+
+    width: 20vw;
+    height: 40vh;
+    margin-left: 1rem;
+}

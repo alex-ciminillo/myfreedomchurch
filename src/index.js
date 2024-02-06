@@ -3,6 +3,7 @@ import './../stylesheets/style.css';
 import './../stylesheets/homepage.css';
 import './../stylesheets/giving.css';
 import './../stylesheets/beliefs.css';
+import './../stylesheets/footer.css';
 import './../stylesheets/underconstruction.css';
 import HomePage from './pages/homepage/homepage.html'
 import HomePageJS from './pages/homepage/homepage'
