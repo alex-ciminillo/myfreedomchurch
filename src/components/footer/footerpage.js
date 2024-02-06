@@ -37,12 +37,13 @@ function addEventListeners() {
   $("#homepage-footer-phone-icon").on()
 
   $("#footer-log-in").on('click', function () {
+    console.log('footer')
     $("#homepage-menu-cover").css("top", `${window.scrollY}px`);
     $("#homepage-navbar").addClass("position-static")
     $("#homepage-navbar").addClass("display-none")
     $("#homepage-menu-cover").removeClass("display-none")
 
-    // $("#homepage-menu-cover-body").removeClass("display-none")
+    $("#sign-in").removeClass("display-none")
 
     setTimeout(() => {
       $("#homepage-menu-cover").addClass("opacity-one")

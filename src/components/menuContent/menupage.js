@@ -46,6 +46,8 @@ function addEventListeners() {
     $("#homepage-menu-cover-navbar-exit").on('click', function () {
 
         $("#homepage-menu-cover").removeClass("opacity-one")
+        $("#homepage-menu-cover-body").addClass("display-none")
+        $("#sign-in").addClass("display-none")
         setTimeout(() => {
             $("#homepage-menu-cover").addClass("display-none")
             $("#homepage-navbar").removeClass("position-static")

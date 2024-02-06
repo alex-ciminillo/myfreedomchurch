@@ -1,6 +1,11 @@
 <div id="homepage-menu-cover" class="homepage-menu-cover display-none" style="top: 0px">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+
     <div class="homepage-menu-cover-backgorund-logo">
     </div>
+
     <div class="homepage-menu-cover-navbar">
         <div id="homepage-menu-cover-navbar-logo" class="homepage-menu-cover-navbar-logo">
             <img id="homepage-navbar-left-logo" class="homepage-navbar-left-logo" />
@@ -8,7 +13,32 @@
         <div id="homepage-menu-cover-navbar-exit" class="homepage-menu-cover-navbar-exit">
             <i class="fa-solid fa-x"></i>
         </div>
+        <!-- <div id="div-1">
+            First Div
+            <p>Click to load first html</p>
+        </div> -->
     </div>
+
+    <!-- <script>
+
+        // Check if file is completely ready
+        $(document).ready(function () {
+
+            // Adding click event on id div-1
+            // if it clicked then anonymous
+            // function will be called
+            $('#div-1').click(function () {
+
+                // Load the external html
+                // here this refers to
+                // current selector
+                $(this).load('../src/components/menuContent/menuContent.html');
+            });
+        });
+    </script> -->
+
+
+
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="
@@ -32,7 +62,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js
         .catch(error => console.error('Error fetching menuContent.html:', error));
     </script> -->
 
-    <!-- <div id="homepage-menu-cover-body" class="homepage-menu-cover-body display-none">
+    <div id="homepage-menu-cover-body" class="homepage-menu-cover-body display-none">
         <div class="homepage-menu-cover-body-left">
             <div class="homepage-menu-cover-body-left-top">
                 <div>
@@ -87,5 +117,9 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js
                 OUR LOCATION
             </div>
         </div>
-    </div> -->
+    </div>
+
+    <div id="sign-in" class="display-none">
+        Sign in!!!!!!!!!
+    </div>
 </div>
